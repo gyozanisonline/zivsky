@@ -85,7 +85,7 @@ export function Lightbox({ artwork, onClose, onPrev, onNext }: LightboxProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="relative z-10 flex flex-col items-center gap-6 max-w-[90vw] max-h-[85vh] px-4 pt-16"
+            className="relative z-10 flex flex-col items-center gap-6 max-w-[90vw] max-h-[85vh] px-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative w-auto max-h-[70vh]">
