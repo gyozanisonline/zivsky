@@ -5,9 +5,13 @@ import { motion } from "framer-motion"
 import { CategoryNav } from "@/components/category-nav"
 import { MasonryGallery } from "@/components/masonry-gallery"
 import { SiteFooter } from "@/components/site-footer"
-import { type Category, artworks } from "@/lib/artworks"
+import { type Category, type Artwork } from "@/lib/artworks"
 
-export function PortfolioPage() {
+interface PortfolioPageProps {
+  artworks: Artwork[]
+}
+
+export function PortfolioPage({ artworks }: PortfolioPageProps) {
   const [active, setActive] = useState<Category>("all")
 
   return (
