@@ -13,7 +13,7 @@ export function PortfolioPage() {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Header */}
-      <header className="relative z-10 pt-16 lg:pt-24 pb-6 px-6 md:px-16 lg:px-24">
+      <header className="relative z-10 pt-8 lg:pt-12 pb-6 px-6 md:px-16 lg:px-24">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
