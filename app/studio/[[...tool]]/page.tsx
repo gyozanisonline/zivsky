@@ -1,12 +1,16 @@
+"use client"
+
 /**
  * Sanity Studio — embedded at /studio
- * Only accessible to authorized Sanity users (Ziv's account).
- * Login is handled by Sanity's own auth.
+ * Loaded client-side only (Studio uses React.createContext which can't run on the server).
  */
-import { NextStudio } from "next-sanity/studio"
+import dynamic from "next/dynamic"
 import config from "../../../sanity.config"
 
-export const dynamic = "force-dynamic"
+const NextStudio = dynamic(
+  () => import("next-sanity/studio").then((m) => m.NextStudio),
+  { ssr: false }
+)
 
 export default function StudioPage() {
   return <NextStudio config={config} />
