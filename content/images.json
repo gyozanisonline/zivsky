@@ -1,0 +1,974 @@
+{
+  "w04": {
+    "width": 9273,
+    "height": 9273,
+    "color": "#a88868",
+    "files": [
+      {
+        "src": "/works/traffic-island-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/works/traffic-island-1600.avif",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/works/traffic-island-2400.avif",
+        "width": 2400,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/traffic-island-share.jpg",
+      "width": 1600,
+      "height": 1600
+    }
+  },
+  "w07": {
+    "width": 1440,
+    "height": 2000,
+    "color": "#f84838",
+    "files": [
+      {
+        "src": "/works/finger-800.avif",
+        "width": 576,
+        "height": 800
+      },
+      {
+        "src": "/works/finger-1600.avif",
+        "width": 1152,
+        "height": 1600
+      },
+      {
+        "src": "/works/finger-2400.avif",
+        "width": 1440,
+        "height": 2000
+      }
+    ],
+    "share": {
+      "src": "/works/finger-share.jpg",
+      "width": 1152,
+      "height": 1600
+    }
+  },
+  "w09": {
+    "width": 6700,
+    "height": 8044,
+    "color": "#c8c8b8",
+    "files": [
+      {
+        "src": "/works/gallery-2-800.avif",
+        "width": 666,
+        "height": 800
+      },
+      {
+        "src": "/works/gallery-2-1600.avif",
+        "width": 1333,
+        "height": 1600
+      },
+      {
+        "src": "/works/gallery-2-2400.avif",
+        "width": 1999,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/gallery-2-share.jpg",
+      "width": 1333,
+      "height": 1600
+    }
+  },
+  "w10": {
+    "width": 5685,
+    "height": 7320,
+    "color": "#a8a8a8",
+    "files": [
+      {
+        "src": "/works/gallery-5-800.avif",
+        "width": 621,
+        "height": 800
+      },
+      {
+        "src": "/works/gallery-5-1600.avif",
+        "width": 1243,
+        "height": 1600
+      },
+      {
+        "src": "/works/gallery-5-2400.avif",
+        "width": 1864,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/gallery-5-share.jpg",
+      "width": 1243,
+      "height": 1600
+    }
+  },
+  "w11": {
+    "width": 5668,
+    "height": 5670,
+    "color": "#282828",
+    "files": [
+      {
+        "src": "/works/gallery-7-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/works/gallery-7-1600.avif",
+        "width": 1599,
+        "height": 1600
+      },
+      {
+        "src": "/works/gallery-7-2400.avif",
+        "width": 2399,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/gallery-7-share.jpg",
+      "width": 1599,
+      "height": 1600
+    }
+  },
+  "w12": {
+    "width": 5755,
+    "height": 8044,
+    "color": "#d8d8d8",
+    "files": [
+      {
+        "src": "/works/gallery-1-800.avif",
+        "width": 572,
+        "height": 800
+      },
+      {
+        "src": "/works/gallery-1-1600.avif",
+        "width": 1145,
+        "height": 1600
+      },
+      {
+        "src": "/works/gallery-1-2400.avif",
+        "width": 1717,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/gallery-1-share.jpg",
+      "width": 1145,
+      "height": 1600
+    }
+  },
+  "w13": {
+    "width": 5868,
+    "height": 11786,
+    "color": "#c8c8c8",
+    "files": [
+      {
+        "src": "/works/gallery-4-800.avif",
+        "width": 398,
+        "height": 800
+      },
+      {
+        "src": "/works/gallery-4-1600.avif",
+        "width": 797,
+        "height": 1600
+      },
+      {
+        "src": "/works/gallery-4-2400.avif",
+        "width": 1195,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/gallery-4-share.jpg",
+      "width": 797,
+      "height": 1600
+    }
+  },
+  "w14": {
+    "width": 10049,
+    "height": 13418,
+    "color": "#d88858",
+    "files": [
+      {
+        "src": "/works/gallery-3-800.avif",
+        "width": 599,
+        "height": 800
+      },
+      {
+        "src": "/works/gallery-3-1600.avif",
+        "width": 1198,
+        "height": 1600
+      },
+      {
+        "src": "/works/gallery-3-2400.avif",
+        "width": 1797,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/gallery-3-share.jpg",
+      "width": 1198,
+      "height": 1600
+    }
+  },
+  "w17": {
+    "width": 10192,
+    "height": 14325,
+    "color": "#c8c8b8",
+    "files": [
+      {
+        "src": "/works/olive-800.avif",
+        "width": 569,
+        "height": 800
+      },
+      {
+        "src": "/works/olive-1600.avif",
+        "width": 1138,
+        "height": 1600
+      },
+      {
+        "src": "/works/olive-2400.avif",
+        "width": 1708,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/olive-share.jpg",
+      "width": 1138,
+      "height": 1600
+    }
+  },
+  "w26": {
+    "width": 14642,
+    "height": 11456,
+    "color": "#c89868",
+    "files": [
+      {
+        "src": "/works/matan-800.avif",
+        "width": 800,
+        "height": 626
+      },
+      {
+        "src": "/works/matan-1600.avif",
+        "width": 1600,
+        "height": 1252
+      },
+      {
+        "src": "/works/matan-2400.avif",
+        "width": 2400,
+        "height": 1878
+      }
+    ],
+    "share": {
+      "src": "/works/matan-share.jpg",
+      "width": 1600,
+      "height": 1252
+    }
+  },
+  "w34": {
+    "width": 2975,
+    "height": 14999,
+    "color": "#282828",
+    "files": [
+      {
+        "src": "/works/stye-after-vuillard-800.avif",
+        "width": 159,
+        "height": 800
+      },
+      {
+        "src": "/works/stye-after-vuillard-1600.avif",
+        "width": 317,
+        "height": 1600
+      },
+      {
+        "src": "/works/stye-after-vuillard-2400.avif",
+        "width": 476,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/stye-after-vuillard-share.jpg",
+      "width": 317,
+      "height": 1600
+    }
+  },
+  "w02": {
+    "width": 3044,
+    "height": 3825,
+    "color": "#b89878",
+    "files": [
+      {
+        "src": "/works/painting-myself-800.avif",
+        "width": 637,
+        "height": 800
+      },
+      {
+        "src": "/works/painting-myself-1600.avif",
+        "width": 1273,
+        "height": 1600
+      },
+      {
+        "src": "/works/painting-myself-2400.avif",
+        "width": 1910,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/painting-myself-share.jpg",
+      "width": 1273,
+      "height": 1600
+    }
+  },
+  "w03": {
+    "width": 4381,
+    "height": 3627,
+    "color": "#181818",
+    "files": [
+      {
+        "src": "/works/untitled-shutters-800.avif",
+        "width": 800,
+        "height": 662
+      },
+      {
+        "src": "/works/untitled-shutters-1600.avif",
+        "width": 1600,
+        "height": 1325
+      },
+      {
+        "src": "/works/untitled-shutters-2400.avif",
+        "width": 2400,
+        "height": 1987
+      }
+    ],
+    "share": {
+      "src": "/works/untitled-shutters-share.jpg",
+      "width": 1600,
+      "height": 1325
+    }
+  },
+  "w16": {
+    "width": 4956,
+    "height": 3471,
+    "color": "#e8b8b8",
+    "files": [
+      {
+        "src": "/works/leftovers-5-800.avif",
+        "width": 800,
+        "height": 560
+      },
+      {
+        "src": "/works/leftovers-5-1600.avif",
+        "width": 1600,
+        "height": 1121
+      },
+      {
+        "src": "/works/leftovers-5-2400.avif",
+        "width": 2400,
+        "height": 1681
+      }
+    ],
+    "share": {
+      "src": "/works/leftovers-5-share.jpg",
+      "width": 1600,
+      "height": 1121
+    }
+  },
+  "w20": {
+    "width": 7400,
+    "height": 9943,
+    "color": "#282828",
+    "files": [
+      {
+        "src": "/works/losing-figure-800.avif",
+        "width": 595,
+        "height": 800
+      },
+      {
+        "src": "/works/losing-figure-1600.avif",
+        "width": 1191,
+        "height": 1600
+      },
+      {
+        "src": "/works/losing-figure-2400.avif",
+        "width": 1786,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/losing-figure-share.jpg",
+      "width": 1191,
+      "height": 1600
+    }
+  },
+  "w25": {
+    "width": 10000,
+    "height": 8230,
+    "color": "#889888",
+    "files": [
+      {
+        "src": "/works/shower-stall-800.avif",
+        "width": 800,
+        "height": 658
+      },
+      {
+        "src": "/works/shower-stall-1600.avif",
+        "width": 1600,
+        "height": 1317
+      },
+      {
+        "src": "/works/shower-stall-2400.avif",
+        "width": 2400,
+        "height": 1975
+      }
+    ],
+    "share": {
+      "src": "/works/shower-stall-share.jpg",
+      "width": 1600,
+      "height": 1317
+    }
+  },
+  "w27": {
+    "width": 7001,
+    "height": 9378,
+    "color": "#685848",
+    "files": [
+      {
+        "src": "/works/fallen-leaves-800.avif",
+        "width": 597,
+        "height": 800
+      },
+      {
+        "src": "/works/fallen-leaves-1600.avif",
+        "width": 1194,
+        "height": 1600
+      },
+      {
+        "src": "/works/fallen-leaves-2400.avif",
+        "width": 1792,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/fallen-leaves-share.jpg",
+      "width": 1194,
+      "height": 1600
+    }
+  },
+  "w33": {
+    "width": 7800,
+    "height": 10491,
+    "color": "#181818",
+    "files": [
+      {
+        "src": "/works/end-800.avif",
+        "width": 595,
+        "height": 800
+      },
+      {
+        "src": "/works/end-1600.avif",
+        "width": 1190,
+        "height": 1600
+      },
+      {
+        "src": "/works/end-2400.avif",
+        "width": 1784,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/end-share.jpg",
+      "width": 1190,
+      "height": 1600
+    }
+  },
+  "w01": {
+    "width": 8700,
+    "height": 7612,
+    "color": "#383838",
+    "files": [
+      {
+        "src": "/works/untitled-window-800.avif",
+        "width": 800,
+        "height": 700
+      },
+      {
+        "src": "/works/untitled-window-1600.avif",
+        "width": 1600,
+        "height": 1400
+      },
+      {
+        "src": "/works/untitled-window-2400.avif",
+        "width": 2400,
+        "height": 2100
+      }
+    ],
+    "share": {
+      "src": "/works/untitled-window-share.jpg",
+      "width": 1600,
+      "height": 1400
+    }
+  },
+  "w05": {
+    "width": 9958,
+    "height": 13266,
+    "color": "#181818",
+    "files": [
+      {
+        "src": "/works/bougainvillea-on-a-red-light-800.avif",
+        "width": 601,
+        "height": 800
+      },
+      {
+        "src": "/works/bougainvillea-on-a-red-light-1600.avif",
+        "width": 1201,
+        "height": 1600
+      },
+      {
+        "src": "/works/bougainvillea-on-a-red-light-2400.avif",
+        "width": 1802,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/bougainvillea-on-a-red-light-share.jpg",
+      "width": 1201,
+      "height": 1600
+    }
+  },
+  "w15": {
+    "width": 2500,
+    "height": 3577,
+    "color": "#282828",
+    "files": [
+      {
+        "src": "/works/untitled-building-800.avif",
+        "width": 559,
+        "height": 800
+      },
+      {
+        "src": "/works/untitled-building-1600.avif",
+        "width": 1118,
+        "height": 1600
+      },
+      {
+        "src": "/works/untitled-building-2400.avif",
+        "width": 1677,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/untitled-building-share.jpg",
+      "width": 1118,
+      "height": 1600
+    }
+  },
+  "w18": {
+    "width": 2000,
+    "height": 2687,
+    "color": "#685848",
+    "files": [
+      {
+        "src": "/works/bug-800.avif",
+        "width": 595,
+        "height": 800
+      },
+      {
+        "src": "/works/bug-1600.avif",
+        "width": 1191,
+        "height": 1600
+      },
+      {
+        "src": "/works/bug-2400.avif",
+        "width": 1786,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/bug-share.jpg",
+      "width": 1191,
+      "height": 1600
+    }
+  },
+  "w21": {
+    "width": 9300,
+    "height": 12424,
+    "color": "#181818",
+    "files": [
+      {
+        "src": "/works/untitled-kitchen-800.avif",
+        "width": 599,
+        "height": 800
+      },
+      {
+        "src": "/works/untitled-kitchen-1600.avif",
+        "width": 1198,
+        "height": 1600
+      },
+      {
+        "src": "/works/untitled-kitchen-2400.avif",
+        "width": 1797,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/untitled-kitchen-share.jpg",
+      "width": 1198,
+      "height": 1600
+    }
+  },
+  "w36": {
+    "width": 3888,
+    "height": 4974,
+    "color": "#e8e8e8",
+    "files": [
+      {
+        "src": "/works/zohar-800.avif",
+        "width": 625,
+        "height": 800
+      },
+      {
+        "src": "/works/zohar-1600.avif",
+        "width": 1251,
+        "height": 1600
+      },
+      {
+        "src": "/works/zohar-2400.avif",
+        "width": 1876,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/zohar-share.jpg",
+      "width": 1251,
+      "height": 1600
+    }
+  },
+  "w22": {
+    "width": 2417,
+    "height": 3262,
+    "color": "#282828",
+    "files": [
+      {
+        "src": "/works/abandoned-car-at-day-800.avif",
+        "width": 593,
+        "height": 800
+      },
+      {
+        "src": "/works/abandoned-car-at-day-1600.avif",
+        "width": 1186,
+        "height": 1600
+      },
+      {
+        "src": "/works/abandoned-car-at-day-2400.avif",
+        "width": 1778,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/abandoned-car-at-day-share.jpg",
+      "width": 1186,
+      "height": 1600
+    }
+  },
+  "w23": {
+    "width": 2780,
+    "height": 3474,
+    "color": "#f8f8f8",
+    "files": [
+      {
+        "src": "/works/abandoned-car-at-night-800.avif",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/works/abandoned-car-at-night-1600.avif",
+        "width": 1280,
+        "height": 1600
+      },
+      {
+        "src": "/works/abandoned-car-at-night-2400.avif",
+        "width": 1921,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/abandoned-car-at-night-share.jpg",
+      "width": 1280,
+      "height": 1600
+    }
+  },
+  "w24": {
+    "width": 3524,
+    "height": 2583,
+    "color": "#484858",
+    "files": [
+      {
+        "src": "/works/untitled-crosswalk-800.avif",
+        "width": 800,
+        "height": 586
+      },
+      {
+        "src": "/works/untitled-crosswalk-1600.avif",
+        "width": 1600,
+        "height": 1173
+      },
+      {
+        "src": "/works/untitled-crosswalk-2400.avif",
+        "width": 2400,
+        "height": 1759
+      }
+    ],
+    "share": {
+      "src": "/works/untitled-crosswalk-share.jpg",
+      "width": 1600,
+      "height": 1173
+    }
+  },
+  "w31": {
+    "width": 2119,
+    "height": 2617,
+    "color": "#585848",
+    "files": [
+      {
+        "src": "/works/intercity-800.avif",
+        "width": 648,
+        "height": 800
+      },
+      {
+        "src": "/works/intercity-1600.avif",
+        "width": 1296,
+        "height": 1600
+      },
+      {
+        "src": "/works/intercity-2400.avif",
+        "width": 1943,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/intercity-share.jpg",
+      "width": 1296,
+      "height": 1600
+    }
+  },
+  "w32": {
+    "width": 7401,
+    "height": 9996,
+    "color": "#282828",
+    "files": [
+      {
+        "src": "/works/night-sun-800.avif",
+        "width": 592,
+        "height": 800
+      },
+      {
+        "src": "/works/night-sun-1600.avif",
+        "width": 1185,
+        "height": 1600
+      },
+      {
+        "src": "/works/night-sun-2400.avif",
+        "width": 1777,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/night-sun-share.jpg",
+      "width": 1185,
+      "height": 1600
+    }
+  },
+  "w35": {
+    "width": 1675,
+    "height": 2250,
+    "color": "#484838",
+    "files": [
+      {
+        "src": "/works/water-lilies-800.avif",
+        "width": 596,
+        "height": 800
+      },
+      {
+        "src": "/works/water-lilies-1600.avif",
+        "width": 1191,
+        "height": 1600
+      },
+      {
+        "src": "/works/water-lilies-2400.avif",
+        "width": 1675,
+        "height": 2250
+      }
+    ],
+    "share": {
+      "src": "/works/water-lilies-share.jpg",
+      "width": 1191,
+      "height": 1600
+    }
+  },
+  "w06": {
+    "width": 1316,
+    "height": 1752,
+    "color": "#787868",
+    "files": [
+      {
+        "src": "/works/untitled-bathtub-800.avif",
+        "width": 601,
+        "height": 800
+      },
+      {
+        "src": "/works/untitled-bathtub-1600.avif",
+        "width": 1202,
+        "height": 1600
+      },
+      {
+        "src": "/works/untitled-bathtub-2400.avif",
+        "width": 1316,
+        "height": 1752
+      }
+    ],
+    "share": {
+      "src": "/works/untitled-bathtub-share.jpg",
+      "width": 1202,
+      "height": 1600
+    }
+  },
+  "w08": {
+    "width": 8100,
+    "height": 6495,
+    "color": "#181818",
+    "files": [
+      {
+        "src": "/works/purple-fence-800.avif",
+        "width": 800,
+        "height": 641
+      },
+      {
+        "src": "/works/purple-fence-1600.avif",
+        "width": 1600,
+        "height": 1283
+      },
+      {
+        "src": "/works/purple-fence-2400.avif",
+        "width": 2400,
+        "height": 1924
+      }
+    ],
+    "share": {
+      "src": "/works/purple-fence-share.jpg",
+      "width": 1600,
+      "height": 1283
+    }
+  },
+  "w19": {
+    "width": 2140,
+    "height": 2627,
+    "color": "#888878",
+    "files": [
+      {
+        "src": "/works/staring-800.avif",
+        "width": 652,
+        "height": 800
+      },
+      {
+        "src": "/works/staring-1600.avif",
+        "width": 1303,
+        "height": 1600
+      },
+      {
+        "src": "/works/staring-2400.avif",
+        "width": 1955,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/staring-share.jpg",
+      "width": 1303,
+      "height": 1600
+    }
+  },
+  "w28": {
+    "width": 2057,
+    "height": 2567,
+    "color": "#685848",
+    "files": [
+      {
+        "src": "/works/scrambled-800.avif",
+        "width": 641,
+        "height": 800
+      },
+      {
+        "src": "/works/scrambled-1600.avif",
+        "width": 1282,
+        "height": 1600
+      },
+      {
+        "src": "/works/scrambled-2400.avif",
+        "width": 1923,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/scrambled-share.jpg",
+      "width": 1282,
+      "height": 1600
+    }
+  },
+  "w29": {
+    "width": 1264,
+    "height": 1256,
+    "color": "#686858",
+    "files": [
+      {
+        "src": "/works/shower-head-800.avif",
+        "width": 800,
+        "height": 795
+      },
+      {
+        "src": "/works/shower-head-1600.avif",
+        "width": 1264,
+        "height": 1256
+      },
+      {
+        "src": "/works/shower-head-2400.avif",
+        "width": 1264,
+        "height": 1256
+      }
+    ],
+    "share": {
+      "src": "/works/shower-head-share.jpg",
+      "width": 1264,
+      "height": 1256
+    }
+  },
+  "w30": {
+    "width": 7201,
+    "height": 9041,
+    "color": "#383838",
+    "files": [
+      {
+        "src": "/works/line-189-800.avif",
+        "width": 637,
+        "height": 800
+      },
+      {
+        "src": "/works/line-189-1600.avif",
+        "width": 1274,
+        "height": 1600
+      },
+      {
+        "src": "/works/line-189-2400.avif",
+        "width": 1912,
+        "height": 2400
+      }
+    ],
+    "share": {
+      "src": "/works/line-189-share.jpg",
+      "width": 1274,
+      "height": 1600
+    }
+  }
+}

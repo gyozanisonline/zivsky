@@ -1,0 +1,740 @@
+[
+  {
+    "id": "w04",
+    "slug": "traffic-island",
+    "source": "אי תנועה, 20x20, שמן על בד, 2026.jpg",
+    "title": {
+      "he": "אי תנועה",
+      "en": "Traffic Island"
+    },
+    "year": 2026,
+    "heightCm": 20,
+    "widthCm": 20,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 1
+  },
+  {
+    "id": "w07",
+    "slug": "finger",
+    "source": "אצבע, 70x50, שמן על בד, 2026.jpg",
+    "title": {
+      "he": "אצבע",
+      "en": "Finger"
+    },
+    "year": 2026,
+    "heightCm": 70,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 2
+  },
+  {
+    "id": "w09",
+    "slug": "gallery-2",
+    "source": "גלריה (2), 60x50, שמן על בד, 2026.jpg",
+    "title": {
+      "he": "גלריה (2)",
+      "en": "Gallery (2)"
+    },
+    "year": 2026,
+    "heightCm": 60,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": {
+      "he": "גלריית תמונות",
+      "en": "Photo Gallery"
+    },
+    "show": true,
+    "confirmed": true,
+    "order": 3
+  },
+  {
+    "id": "w10",
+    "slug": "gallery-5",
+    "source": "גלריה (5), 90x70, שמן על בד, 2026.jpg",
+    "title": {
+      "he": "גלריה (5)",
+      "en": "Gallery (5)"
+    },
+    "year": 2026,
+    "heightCm": 90,
+    "widthCm": 70,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": {
+      "he": "גלריית תמונות",
+      "en": "Photo Gallery"
+    },
+    "show": true,
+    "confirmed": true,
+    "order": 4
+  },
+  {
+    "id": "w11",
+    "slug": "gallery-7",
+    "source": "גלריה (7), 100x100, שמן על בד,2026 .jpg",
+    "title": {
+      "he": "גלריה (7)",
+      "en": "Gallery (7)"
+    },
+    "year": 2026,
+    "heightCm": 100,
+    "widthCm": 100,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": {
+      "he": "גלריית תמונות",
+      "en": "Photo Gallery"
+    },
+    "show": true,
+    "confirmed": true,
+    "order": 5
+  },
+  {
+    "id": "w12",
+    "slug": "gallery-1",
+    "source": "גלריית תמונות (1) - מלא.jpg",
+    "title": {
+      "he": "גלריה (1)",
+      "en": "Gallery (1)"
+    },
+    "year": 2026,
+    "heightCm": 70,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": {
+      "he": "גלריית תמונות",
+      "en": "Photo Gallery"
+    },
+    "show": true,
+    "confirmed": true,
+    "order": 6
+  },
+  {
+    "id": "w13",
+    "slug": "gallery-4",
+    "source": "גלריית תמונות (4) מלא.jpg",
+    "title": {
+      "he": "גלריה (4)",
+      "en": "Gallery (4)"
+    },
+    "year": 2026,
+    "heightCm": 100,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": {
+      "he": "גלריית תמונות",
+      "en": "Photo Gallery"
+    },
+    "show": true,
+    "confirmed": true,
+    "order": 7
+  },
+  {
+    "id": "w14",
+    "slug": "gallery-3",
+    "source": "זיו בלבירסקי, גלריה (3), שמן על בד, 2026,.jpg",
+    "title": {
+      "he": "גלריה (3)",
+      "en": "Gallery (3)"
+    },
+    "year": 2026,
+    "heightCm": 80,
+    "widthCm": 60,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": {
+      "he": "גלריית תמונות",
+      "en": "Photo Gallery"
+    },
+    "show": true,
+    "confirmed": true,
+    "order": 8
+  },
+  {
+    "id": "w17",
+    "slug": "olive",
+    "source": "זית, 70x50,שמן על בד, 2026.jpg",
+    "title": {
+      "he": "זית",
+      "en": "Olive"
+    },
+    "year": 2026,
+    "heightCm": 70,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 9
+  },
+  {
+    "id": "w26",
+    "slug": "matan",
+    "source": "מתן, 140x110, שמן על בד, 2026.jpg",
+    "title": {
+      "he": "מתן",
+      "en": "Matan"
+    },
+    "year": 2026,
+    "heightCm": 110,
+    "widthCm": 140,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 10
+  },
+  {
+    "id": "w34",
+    "slug": "stye-after-vuillard",
+    "source": "שעורה_אחרי וויאר, 150x30, שמן על בד, 2026.jpg",
+    "title": {
+      "he": "שעורה/אחרי וויאר",
+      "en": "Stye/after Vuillard"
+    },
+    "year": 2026,
+    "heightCm": 150,
+    "widthCm": 30,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 11
+  },
+  {
+    "id": "w02",
+    "slug": "painting-myself",
+    "source": "painting myself.jpg",
+    "title": {
+      "he": "מציירת את עצמי",
+      "en": "Painting Myself"
+    },
+    "year": 2025,
+    "heightCm": 50,
+    "widthCm": 40,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 12
+  },
+  {
+    "id": "w03",
+    "slug": "untitled-shutters",
+    "source": "untitled  (shutters), 100 on 120, oil on canvas ד 2025.jpg",
+    "title": {
+      "he": "ללא כותרת (תריסים)",
+      "en": "Untitled (Shutters)"
+    },
+    "year": 2025,
+    "heightCm": 100,
+    "widthCm": 120,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 13
+  },
+  {
+    "id": "w16",
+    "slug": "leftovers-5",
+    "source": "זיו בלבירסקי, שאריות מספר 5, גואש על נייר.jpg",
+    "title": {
+      "he": "שאריות (5)",
+      "en": "Leftovers (5)"
+    },
+    "year": 2025,
+    "heightCm": 29.7,
+    "widthCm": 42,
+    "medium": {
+      "he": "גואש ועפרון על נייר",
+      "en": "Gouache and pencil on paper"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 14
+  },
+  {
+    "id": "w20",
+    "slug": "losing-figure",
+    "source": "מאבדת צורה, 80x60, שמן על בד, 2024.jpg",
+    "title": {
+      "he": "מאבדת צורה",
+      "en": "Losing figure"
+    },
+    "year": 2025,
+    "heightCm": 80,
+    "widthCm": 60,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 15
+  },
+  {
+    "id": "w25",
+    "slug": "shower-stall",
+    "source": "מקלחון, 110x90,שמן על בד, 2025.jpg",
+    "title": {
+      "he": "מקלחון",
+      "en": "Shower Stall"
+    },
+    "year": 2025,
+    "heightCm": 90,
+    "widthCm": 110,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 16
+  },
+  {
+    "id": "w27",
+    "slug": "fallen-leaves",
+    "source": "עלים שנפלו מלא.jpg",
+    "title": {
+      "he": "עלים שנפלו",
+      "en": "Fallen Leaves"
+    },
+    "year": 2025,
+    "heightCm": 80,
+    "widthCm": 60,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 17
+  },
+  {
+    "id": "w33",
+    "slug": "end",
+    "source": "שביל מלא.jpg",
+    "title": {
+      "he": "קצה",
+      "en": "End"
+    },
+    "year": 2025,
+    "heightCm": 80,
+    "widthCm": 60,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 18
+  },
+  {
+    "id": "w01",
+    "slug": "untitled-window",
+    "source": "4חלון מלא.jpg",
+    "title": {
+      "he": "ללא כותרת (חלון)",
+      "en": "Untitled (Window)"
+    },
+    "year": 2024,
+    "heightCm": 70,
+    "widthCm": 82,
+    "medium": {
+      "he": "שמן על בד מוצמד ללוח",
+      "en": "Oil on canvas mounted on panel"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 19
+  },
+  {
+    "id": "w05",
+    "slug": "bougainvillea-on-a-red-light",
+    "source": "איילון ובוגנביליה מלא.jpg",
+    "title": {
+      "he": "בוגנוויליה ברמזור אדום",
+      "en": "Bougainvillea on a red light"
+    },
+    "year": 2024,
+    "heightCm": 120,
+    "widthCm": 90,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 20
+  },
+  {
+    "id": "w15",
+    "slug": "untitled-building",
+    "source": "זיו בלבירסקי, ללא כותרת (בניין), שמן ואקריליק על בד, 50X70 ס_מ, 2024.jpg",
+    "title": {
+      "he": "ללא כותרת (בניין)",
+      "en": "Untitled (Building)"
+    },
+    "year": 2024,
+    "heightCm": 70,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן ואקריליק על בד",
+      "en": "Oil and acrylic on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 21
+  },
+  {
+    "id": "w18",
+    "slug": "bug",
+    "source": "חרק, 30x40, שמן על בד .jpg",
+    "title": {
+      "he": "חרק",
+      "en": "Bug"
+    },
+    "year": 2024,
+    "heightCm": 40,
+    "widthCm": 30,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 22
+  },
+  {
+    "id": "w21",
+    "slug": "untitled-kitchen",
+    "source": "מטבח מלא.jpg",
+    "title": {
+      "he": "ללא כותרת (מטבח)",
+      "en": "Untitled (Kitchen)"
+    },
+    "year": 2024,
+    "heightCm": 80,
+    "widthCm": 60,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 23
+  },
+  {
+    "id": "w36",
+    "slug": "zohar",
+    "source": "‎⁨זהר, 42X34 ס_מ )⁩.jpg",
+    "title": {
+      "he": "זהר",
+      "en": "Zohar"
+    },
+    "year": 2024,
+    "heightCm": 42,
+    "widthCm": 34,
+    "medium": {
+      "he": "צבעי עפרון וגרפיט על נייר",
+      "en": "Colored pencils and graphite on paper"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 24
+  },
+  {
+    "id": "w22",
+    "slug": "abandoned-car-at-day",
+    "source": "מכונית ביום, 120x90 , שמן על בד, 2023.jpg",
+    "title": {
+      "he": "מכונית נטושה ביום",
+      "en": "Abandoned Car At Day"
+    },
+    "year": 2023,
+    "heightCm": 120,
+    "widthCm": 90,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 25
+  },
+  {
+    "id": "w23",
+    "slug": "abandoned-car-at-night",
+    "source": "מכונית בלילה.jpg",
+    "title": {
+      "he": "מכונית נטושה בלילה",
+      "en": "Abandoned Car At Night"
+    },
+    "year": 2023,
+    "heightCm": 42,
+    "widthCm": 29.7,
+    "medium": {
+      "he": "צבעי עפרון וגרפיט על נייר",
+      "en": "Colored pencils and graphite on paper"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 26
+  },
+  {
+    "id": "w24",
+    "slug": "untitled-crosswalk",
+    "source": "מעבר חצייה, שמן על בד, 120X90 ס_מ.jpg",
+    "title": {
+      "he": "ללא כותרת (מעבר חציה)",
+      "en": "Untitled (Crosswalk)"
+    },
+    "year": 2023,
+    "heightCm": 90,
+    "widthCm": 120,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 27
+  },
+  {
+    "id": "w31",
+    "slug": "intercity",
+    "source": "רחוב מלא.jpg",
+    "title": {
+      "he": "בינעירוני",
+      "en": "Intercity"
+    },
+    "year": 2023,
+    "heightCm": 23,
+    "widthCm": 18.5,
+    "medium": {
+      "he": "צבעי עפרון וגרפיט על נייר",
+      "en": "Colored pencils and graphite on paper"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 28
+  },
+  {
+    "id": "w32",
+    "slug": "night-sun",
+    "source": "רפידים צבעוני מלא.jpg",
+    "title": {
+      "he": "שמש לילה",
+      "en": "Night Sun"
+    },
+    "year": 2023,
+    "heightCm": 80,
+    "widthCm": 60,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 29
+  },
+  {
+    "id": "w35",
+    "slug": "water-lilies",
+    "source": "שרונה סריקה מלאה.jpg",
+    "title": {
+      "he": "שושנות מים",
+      "en": "Water Lilies"
+    },
+    "year": 2023,
+    "heightCm": 35,
+    "widthCm": 26,
+    "medium": {
+      "he": "צבעי עפרון וגרפיט על נייר",
+      "en": "Colored pencils and graphite on paper"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 30
+  },
+  {
+    "id": "w06",
+    "slug": "untitled-bathtub",
+    "source": "אמבטיה מלא.jpg",
+    "title": {
+      "he": "ללא כותרת (אמבטיה)",
+      "en": "Untitled (Bathtub)"
+    },
+    "year": 2022,
+    "heightCm": 17,
+    "widthCm": 13,
+    "medium": {
+      "he": "צבעי עפרון וגרפיט על נייר",
+      "en": "Colored pencils and graphite on paper"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 31
+  },
+  {
+    "id": "w08",
+    "slug": "purple-fence",
+    "source": "גדר מלא.jpg",
+    "title": {
+      "he": "גדר סגולה",
+      "en": "Purple Fence"
+    },
+    "year": null,
+    "heightCm": 40,
+    "widthCm": 50,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 32
+  },
+  {
+    "id": "w19",
+    "slug": "staring",
+    "source": "ללא כותרת 40 על 50.jpg",
+    "title": {
+      "he": "בוהה",
+      "en": "Staring"
+    },
+    "year": null,
+    "heightCm": 50,
+    "widthCm": 40,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 33
+  },
+  {
+    "id": "w28",
+    "slug": "scrambled",
+    "source": "קשקוש, 40 על 50.jpg",
+    "title": {
+      "he": "קשקוש",
+      "en": "Scrambled"
+    },
+    "year": null,
+    "heightCm": 50,
+    "widthCm": 40,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 34
+  },
+  {
+    "id": "w29",
+    "slug": "shower-head",
+    "source": "ראש מקלחת, 25 על 25 סמ.jpg",
+    "title": {
+      "he": "ראש מקלחת",
+      "en": "Shower Head"
+    },
+    "year": null,
+    "heightCm": 25,
+    "widthCm": 25,
+    "medium": {
+      "he": "שמן על בד",
+      "en": "Oil on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": false,
+    "order": 35
+  },
+  {
+    "id": "w30",
+    "slug": "line-189",
+    "source": "רגליים מלא.jpg",
+    "title": {
+      "he": "קו 189",
+      "en": "Line 189"
+    },
+    "year": null,
+    "heightCm": 50,
+    "widthCm": 40,
+    "medium": {
+      "he": "שמן ואקריליק על בד",
+      "en": "Oil and acrylic on canvas"
+    },
+    "series": null,
+    "show": true,
+    "confirmed": true,
+    "order": 36
+  }
+]
