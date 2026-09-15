@@ -1,0 +1,367 @@
+/* Ziv Balbirsky: a white gallery wall.
+   Spacing steps: 4 8 12 16 24 32 48 64 96. Type steps: 12 13 14 16 20 28 40. */
+
+:root {
+  --wall: #ffffff;
+  --ink: #161614;
+  --graphite: #6b6b66;
+  --hairline: #e6e6e1;
+  --olive: #8c8a5e;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  /* One centimetre of canvas on screen. The tallest work (150 cm) and the
+     widest (140 cm) always fit; everything else keeps its true proportion. */
+  --cm: min(4px, 0.42svh, calc((100vw - 2 * var(--gutter)) / 150));
+
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: var(--olive);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-block: 24px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.wordmark:hover {
+  text-decoration-line: none;
+}
+
+.wordmark-name {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.wordmark-role {
+  font-size: 13px;
+  color: var(--graphite);
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+/* ---------- The wall ---------- */
+
+.wall-page {
+  padding-block: 32px 96px;
+}
+
+.scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-block-end: 64px;
+  font-size: 12px;
+  color: var(--graphite);
+}
+
+.scale p {
+  margin: 0;
+}
+
+.scale-ruler {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.scale-bar {
+  display: block;
+  inline-size: calc(50 * var(--cm));
+  block-size: 6px;
+  border: 1px solid var(--graphite);
+  border-block-start: 0;
+}
+
+/* Rows wrap, and every work in a row shares one centre line, as on a hung wall. */
+.wall {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 64px clamp(24px, 4vw, 64px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.piece {
+  --img-h: max(48px, calc(var(--h) * var(--cm)));
+  inline-size: max(128px, calc(var(--img-h) * var(--ratio)));
+  max-inline-size: 100%;
+}
+
+.piece-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.piece-image {
+  block-size: var(--img-h);
+  inline-size: auto;
+  aspect-ratio: var(--ratio);
+  max-inline-size: 100%;
+  object-fit: contain;
+  background: var(--tone);
+}
+
+/* Fixed height (two title lines + year), so labels never shift a work off the row's centre line. */
+.piece-label {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  inline-size: 100%;
+  block-size: 64px;
+  margin-block-start: 12px;
+  text-align: center;
+}
+
+.piece-title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-wrap: balance;
+  text-decoration-line: inherit;
+  text-decoration-color: var(--olive);
+}
+
+.piece-year {
+  min-block-size: 1.4em;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--graphite);
+  font-variant-numeric: tabular-nums;
+}
+
+.piece-link:hover {
+  text-decoration-line: none;
+}
+
+.piece-link:hover .piece-title {
+  text-decoration-line: underline;
+}
+
+.piece-link:focus-visible {
+  outline-offset: 8px;
+}
+
+/* ---------- A single work ---------- */
+
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  align-items: center;
+  gap: clamp(32px, 5vw, 96px);
+  min-block-size: calc(100svh - 120px);
+  padding-block: 24px 96px;
+}
+
+.work-figure {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.work-image {
+  inline-size: auto;
+  block-size: auto;
+  max-inline-size: 100%;
+  max-block-size: calc(100svh - 160px);
+  background: var(--tone);
+}
+
+.work-label {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+}
+
+.work-title {
+  margin: 0;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.work-title-alt {
+  margin: 0;
+  font-size: 14px;
+  color: var(--graphite);
+}
+
+.work-details {
+  display: grid;
+  gap: 4px;
+  margin-block-start: 16px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.work-details p {
+  margin: 0;
+}
+
+.work-series {
+  color: var(--graphite);
+}
+
+.work-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-block-start: 32px;
+  font-size: 14px;
+}
+
+.work-back {
+  justify-self: start;
+  margin-block-start: 8px;
+  font-size: 14px;
+  color: var(--graphite);
+}
+
+@media (max-width: 900px) {
+  .work {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    min-block-size: 0;
+  }
+
+  .work-image {
+    max-block-size: 78svh;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  display: grid;
+  gap: 16px;
+  padding-block: 48px 64px;
+  border-block-start: 1px solid var(--hairline);
+}
+
+.footer-heading {
+  margin: 0;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 48px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  list-style: none;
+}
+
+.contact-list li {
+  display: grid;
+  gap: 2px;
+}
+
+.contact-label {
+  font-size: 12px;
+  color: var(--graphite);
+}
+
+.colophon {
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: var(--graphite);
+}
