@@ -10,7 +10,9 @@ export interface WallGroup {
 
 const area = (work: Work) => (work.heightCm ?? 0) * (work.widthCm ?? 0)
 const isOnPaper = (work: Work) => /\bon paper\b/i.test(work.medium.en ?? "")
-const byLargest = (a: Work, b: Work) => area(b) - area(a)
+// Tallest first. Height is what sets a row's height, so ordering by it keeps rows even
+// and stops a tall thin work from leaving a hole above its short neighbours.
+const byLargest = (a: Work, b: Work) => (b.heightCm ?? 0) - (a.heightCm ?? 0) || area(b) - area(a)
 
 // Newest year first, undated last.
 function yearsOf(list: readonly Work[]): (number | null)[] {
@@ -19,7 +21,7 @@ function yearsOf(list: readonly Work[]): (number | null)[] {
   )
 }
 
-// Biggest work first, so a run never opens on a tiny piece.
+// Tallest work first, so a run never opens on a tiny piece and rows stay even.
 // A series hangs together, placed where its largest member would be.
 function largestFirst(list: readonly Work[]): Work[] {
   const units = new Map<string, Work[]>()
