@@ -1,7 +1,7 @@
 # Ziv Balbirsky portfolio
 
 Portfolio site for painter Ziv Balbirsky. Next.js 16 App Router, fully static pages, plain CSS, no CMS.
-Hebrew at `/`, English at `/en`. Vercel project `zivsky` (GitHub `gyozanisonline/zivsky`).
+English at `/`, Hebrew at `/he` (old `/en` links redirect). Vercel project `zivsky` (GitHub `gyozanisonline/zivsky`).
 Rebuilt 2026-09-15 on `feat/rebuild`; the March Sanity site lives on in `main`'s history.
 
 ## How content gets in
@@ -19,8 +19,9 @@ Commit `content/` and `public/works/`. The originals never enter the repo.
 | `lib/works.ts` | Typed works list (catalogue + images), size label |
 | `lib/i18n.ts` | Copy in both languages, `DEFAULT_LANG`, link helpers |
 | `app/(he)`, `app/(en)` | One root layout per language (sets `lang`/`dir`) |
-| `components/wall.tsx` | Home: works at true relative scale |
-| `components/work-view.tsx` | Single work with museum label |
+| `components/wall.tsx` | Home: works at true relative scale, with the sort switch |
+| `lib/arrange.ts`, `lib/views.ts` | The arrangements (Medium default, Year, Size, each reversible) and prev/next order |
+| `components/work-view.tsx` | Single work: viewer with museum label, arrows, close |
 | `app/site.css` | All styles and tokens |
 
 ## Run
@@ -29,13 +30,16 @@ Commit `content/` and `public/works/`. The originals never enter the repo.
 
 ## Design (agreed with Yoel)
 - White wall `#FFFFFF`, ink `#161614`, graphite `#6B6B66`, hairline `#E6E6E1`, olive `#8C8A5E` for hover only.
-- Wall: every work sized by its real height in cm (`--cm` in `site.css`), rows share a centre line. Do not switch to equal-height rows.
+- Wall: every work sized by its real height in cm (`--cm` in `site.css`). Three arrangements, each with a reverse, one static page each: Medium at `/` (Paintings, then Works on paper), the rest at `/sort/<view>[-reversed]`. Pressing the option you are on reverses the wall (groups and works both), shown by the arrow next to it. Inside a year the largest work leads and a series hangs together; the wall never opens on a tiny work. By year is not the default (Yoel). Rows start at the reading edge, works stand on one bottom line, captions left-aligned (start) under each work. Yoel chose true scale over equal frames on 2026-09-15; do not switch to equal-height rows.
+- English opens the site (Yoel's call, 2026-09-15). Flipping it means moving the route folders, not just `DEFAULT_LANG`.
+- Wall `<img sizes>` is the work's real on-screen width; a vague `sizes` made the wall download the 1600/2400 files.
 - Labels: title, year, medium, height × width cm (height first).
 - Fonts: Bellefair + IBM Plex Sans Hebrew, placeholders until Ziv names the font she liked.
-- One motion: cross-document view transition between a work on the wall and its page.
+- Motion: pressing a work sends it from the wall into the viewer (cross-document view transition); the header and footer hold still, everything else fades. Same transition when the sort changes.
+- The work page is a viewer: chevrons flank the painting, a cross in the top corner returns to the wall, and arrow keys / Escape do the same (`components/work-keys.tsx`).
 
 ## Waiting on Ziv (emailed 2026-09-15)
-Font, which language opens first, phone on site, order of works, CV and artist statement (then add an About page), 5 missing years, Hebrew wording for "mounted on panel".
+Font, phone on site, order of works, CV and artist statement (then add an About page), 5 missing years, Hebrew wording for "mounted on panel".
 
 ## Permissions
 - Free to: read, typecheck, build, run dev, push `feat/*` branches.

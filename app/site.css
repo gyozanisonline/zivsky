@@ -20,6 +20,43 @@
   @view-transition {
     navigation: auto;
   }
+
+  /* When the sort changes, each work glides to its new place on the wall.
+     When a work is pressed, it travels from the wall into the viewer. */
+  ::view-transition-group(*) {
+    animation-duration: 420ms;
+    animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  /* The header and footer stay put instead of fading with everything else. */
+  .site-header {
+    view-transition-name: site-header;
+  }
+
+  .site-footer {
+    view-transition-name: site-footer;
+  }
+
+  /* Everything unnamed (the other works, the labels) fades out, then the new page fades in. */
+  ::view-transition-old(root) {
+    animation: fade-out 260ms cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: fade-in 360ms 60ms cubic-bezier(0, 0, 0.2, 1) both;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
 }
 
 *,
@@ -128,15 +165,55 @@ a:hover {
   padding-block: 32px 96px;
 }
 
-.scale {
+/* Sorting on the reading side, the scale on the far side. */
+.wall-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 24px;
-  margin-block-end: 64px;
-  font-size: 12px;
+  gap: 0 32px;
+  margin-block-end: 48px;
   color: var(--graphite);
+}
+
+.views {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 16px;
+  font-size: 13px;
+}
+
+/* 10px above and below gives each option a 40px tall hit area. */
+.view-link {
+  padding-block: 10px;
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.view-link:hover {
+  color: var(--ink);
+}
+
+/* The arrow says which way the wall is running now. */
+.view-dir {
+  margin-inline-start: 4px;
+  font-size: 11px;
+}
+
+.view-link[aria-current="page"] {
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-color: var(--ink);
+}
+
+.scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-size: 12px;
 }
 
 .scale p {
@@ -158,13 +235,37 @@ a:hover {
   border-block-start: 0;
 }
 
-/* Rows wrap, and every work in a row shares one centre line, as on a hung wall. */
+/* One section per group. Heading to its works (32) sits well inside the gap between groups (96). */
+.wall-group + .wall-group {
+  margin-block-start: 96px;
+}
+
+.group-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 32px;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.group-heading::after {
+  content: "";
+  flex: 1;
+  border-block-start: 1px solid var(--hairline);
+}
+
+/* Works keep their true relative size. Rows start at the reading edge and every
+   work stands on one line, so the captions under a row form a straight line too. */
 .wall {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 64px clamp(24px, 4vw, 64px);
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 48px clamp(24px, 4vw, 64px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -179,7 +280,7 @@ a:hover {
 .piece-link {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .piece-image {
@@ -189,17 +290,18 @@ a:hover {
   max-inline-size: 100%;
   object-fit: contain;
   background: var(--tone);
+  outline: 1px solid rgb(0 0 0 / 0.06);
+  outline-offset: -1px;
 }
 
-/* Fixed height (two title lines + year), so labels never shift a work off the row's centre line. */
+/* Fixed at two title lines, so a one-line title never lifts its work off the row's line. */
 .piece-label {
   display: grid;
   align-content: start;
-  gap: 2px;
   inline-size: 100%;
-  block-size: 64px;
+  block-size: 44px;
   margin-block-start: 12px;
-  text-align: center;
+  text-align: start;
 }
 
 .piece-title {
@@ -213,14 +315,6 @@ a:hover {
   text-wrap: balance;
   text-decoration-line: inherit;
   text-decoration-color: var(--olive);
-}
-
-.piece-year {
-  min-block-size: 1.4em;
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--graphite);
-  font-variant-numeric: tabular-nums;
 }
 
 .piece-link:hover {
@@ -238,6 +332,7 @@ a:hover {
 /* ---------- A single work ---------- */
 
 .work {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
   align-items: center;
@@ -248,16 +343,57 @@ a:hover {
 
 .work-figure {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 8px;
   margin: 0;
+}
+
+/* Quiet marks at 40px square, so they are easy to hit and easy to ignore. */
+.work-close,
+.work-arrow {
+  display: grid;
+  flex: none;
+  place-items: center;
+  inline-size: 40px;
+  block-size: 40px;
+  color: var(--graphite);
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.work-close:hover,
+.work-arrow:hover {
+  color: var(--ink);
+  text-decoration-line: none;
+}
+
+.work-close {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+}
+
+/* The chevron points away from the painting, and turns around in Hebrew. */
+.work-arrow-next svg,
+[dir="rtl"] .work-arrow-prev svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .work-arrow-next svg {
+  transform: none;
 }
 
 .work-image {
   inline-size: auto;
   block-size: auto;
+  min-inline-size: 0;
   max-inline-size: 100%;
   max-block-size: calc(100svh - 160px);
   background: var(--tone);
+  outline: 1px solid rgb(0 0 0 / 0.06);
+  outline-offset: -1px;
 }
 
 .work-label {
@@ -294,21 +430,6 @@ a:hover {
 }
 
 .work-series {
-  color: var(--graphite);
-}
-
-.work-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-block-start: 32px;
-  font-size: 14px;
-}
-
-.work-back {
-  justify-self: start;
-  margin-block-start: 8px;
-  font-size: 14px;
   color: var(--graphite);
 }
 
