@@ -1,9 +1,10 @@
+import { isDefaultSort, sortSlug, type Sort } from "@/lib/views"
 import type { Lang } from "@/lib/works"
 
-export const LANGS: readonly Lang[] = ["he", "en"]
+export const LANGS: readonly Lang[] = ["en", "he"]
 
-// The language served at "/". Flip this to open the site in English.
-export const DEFAULT_LANG: Lang = "he"
+// The language served at "/". Must match the route folders: app/(en) serves "/", app/(he) serves "/he".
+export const DEFAULT_LANG: Lang = "en"
 
 export const dirOf = (lang: Lang) => (lang === "he" ? "rtl" : "ltr")
 export const otherLang = (lang: Lang): Lang => (lang === "he" ? "en" : "he")
@@ -12,6 +13,8 @@ const prefix = (lang: Lang) => (lang === DEFAULT_LANG ? "" : `/${lang}`)
 export const homeHref = (lang: Lang) => prefix(lang) || "/"
 export const workHref = (lang: Lang, slug: string) => `${prefix(lang)}/works/${slug}`
 export const pathFor = (lang: Lang, path: string) => `${prefix(lang)}${path}` || "/"
+export const sortHref = (lang: Lang, sort: Sort) =>
+  isDefaultSort(sort) ? homeHref(lang) : pathFor(lang, `/sort/${sortSlug(sort)}`)
 
 export const copy = {
   he: {
@@ -24,6 +27,18 @@ export const copy = {
     switchLabel: "English",
     scaleNote: "כל העבודות מוצגות בגודלן היחסי האמיתי",
     scale: "50 ס״מ",
+    undated: "ללא תאריך",
+    paintings: "ציורים",
+    paper: "עבודות על נייר",
+    sortBy: "סידור לפי",
+    viewsLabel: "סידור העבודות",
+    views: { medium: "טכניקה", year: "שנה", size: "גודל" },
+    flipTo: "לחיצה נוספת:",
+    order: {
+      medium: ["ציורים תחילה", "עבודות על נייר תחילה"],
+      year: ["החדש תחילה", "הישן תחילה"],
+      size: ["הגדול תחילה", "הקטן תחילה"],
+    },
     cm: "ס״מ",
     allWorks: "לכל העבודות",
     workNav: "מעבר בין עבודות",
@@ -43,6 +58,18 @@ export const copy = {
     switchLabel: "עברית",
     scaleNote: "Every work is shown at its true relative size",
     scale: "50 cm",
+    undated: "Undated",
+    paintings: "Paintings",
+    paper: "Works on paper",
+    sortBy: "Sort by",
+    viewsLabel: "Arrange the works",
+    views: { medium: "Medium", year: "Year", size: "Size" },
+    flipTo: "Press again for",
+    order: {
+      medium: ["paintings first", "works on paper first"],
+      year: ["newest first", "oldest first"],
+      size: ["largest first", "smallest first"],
+    },
     cm: "cm",
     allWorks: "All works",
     workNav: "More works",

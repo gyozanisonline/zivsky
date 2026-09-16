@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { copy, pathFor } from "@/lib/i18n"
+import { copy, DEFAULT_LANG, pathFor } from "@/lib/i18n"
 import { getWork, sizeLabel, works, type Lang } from "@/lib/works"
 
 const LOCALE: Record<Lang, string> = { he: "he_IL", en: "en_US" }
@@ -7,7 +7,7 @@ const LOCALE: Record<Lang, string> = { he: "he_IL", en: "en_US" }
 function alternates(lang: Lang, path: string): Metadata["alternates"] {
   return {
     canonical: pathFor(lang, path),
-    languages: { he: pathFor("he", path), en: pathFor("en", path), "x-default": pathFor("he", path) },
+    languages: { he: pathFor("he", path), en: pathFor("en", path), "x-default": pathFor(DEFAULT_LANG, path) },
   }
 }
 
