@@ -258,13 +258,14 @@ a:hover {
   border-block-start: 1px solid var(--hairline);
 }
 
-/* Works keep their true relative size. Rows start at the reading edge and every
-   work stands on one line, so the captions under a row form a straight line too. */
+/* Works keep their true relative size, so a row can never fill the width exactly.
+   The leftover space is shared out evenly, between the works and at both ends, instead
+   of leaving a ragged edge. Every work stands on one line, so the captions line up too. */
 .wall {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   gap: 48px clamp(24px, 4vw, 64px);
   margin: 0;
   padding: 0;
