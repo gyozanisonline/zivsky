@@ -1,7 +1,8 @@
 import type { CSSProperties } from "react"
+import { WallBar } from "@/components/wall-bar"
 import { arrange } from "@/lib/arrange"
-import { copy, sortHref, workHref } from "@/lib/i18n"
-import { VIEWS, type Sort } from "@/lib/views"
+import { copy, workHref } from "@/lib/i18n"
+import type { Layout, Sort } from "@/lib/views"
 import { srcSet, type Lang, type Work } from "@/lib/works"
 
 // Works without a recorded height hang at a middling size rather than vanishing.
@@ -11,7 +12,7 @@ const MAX_PX_PER_CM = 4
 const MIN_PIECE_PX = 128
 const EAGER_COUNT = 6
 
-export function Wall({ lang, sort }: { lang: Lang; sort: Sort }) {
+export function Wall({ lang, sort, layout }: { lang: Lang; sort: Sort; layout: Layout }) {
   const t = copy[lang]
   const groups = arrange(sort, lang)
   const eagerIds = new Set(
@@ -24,43 +25,7 @@ export function Wall({ lang, sort }: { lang: Lang; sort: Sort }) {
   return (
     <main className="wall-page">
       <h1 className="visually-hidden">{t.works}</h1>
-      <div className="wall-bar">
-        <nav className="views" aria-label={t.viewsLabel}>
-          <span className="views-label">{t.sortBy}</span>
-          {VIEWS.map((view) => {
-            const active = view === sort.view
-            // The option you are on links to its own reverse; the others open their own first order.
-            const target: Sort = { view, reversed: active ? !sort.reversed : false }
-            const now = t.order[view][active && sort.reversed ? 1 : 0]
-            const then = t.order[view][target.reversed ? 1 : 0]
-            const label = active ? `${t.views[view]}, ${now}. ${t.flipTo} ${then}` : t.views[view]
-            return (
-              <a
-                key={view}
-                className="view-link"
-                href={sortHref(lang, target)}
-                aria-current={active ? "page" : undefined}
-                aria-label={label}
-                title={label}
-              >
-                {t.views[view]}
-                {active && (
-                  <span className="view-dir" aria-hidden="true">
-                    {sort.reversed ? "↑" : "↓"}
-                  </span>
-                )}
-              </a>
-            )
-          })}
-        </nav>
-        <div className="scale">
-          <p className="scale-note">{t.scaleNote}</p>
-          <p className="scale-ruler">
-            <span className="scale-bar" aria-hidden="true" />
-            <span>{t.scale}</span>
-          </p>
-        </div>
-      </div>
+      <WallBar lang={lang} layout={layout} sort={sort} />
       {groups.map((group) => {
         const headingId = `group-${group.key}`
         return (

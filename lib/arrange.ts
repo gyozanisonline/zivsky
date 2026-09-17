@@ -21,18 +21,22 @@ function yearsOf(list: readonly Work[]): (number | null)[] {
   )
 }
 
-// Tallest work first, so a run never opens on a tiny piece and rows stay even.
-// A series hangs together, placed where its largest member would be.
+// The work with the most surface opens the run, because that is the one worth meeting first.
+// Everything after it runs tallest first, which keeps the rows even.
+// A series hangs together, placed where its own first work would be.
 function largestFirst(list: readonly Work[]): Work[] {
   const units = new Map<string, Work[]>()
   list.forEach((work) => {
     const key = work.series ? `series-${work.series.en}` : work.id
     units.set(key, [...(units.get(key) ?? []), work])
   })
-  return [...units.values()]
+
+  const ordered = [...units.values()]
     .map((members) => [...members].sort(byLargest))
     .sort((a, b) => byLargest(a[0], b[0]))
-    .flat()
+
+  const widest = ordered.reduce((best, unit) => (area(unit[0]) > area(best[0]) ? unit : best), ordered[0])
+  return [widest, ...ordered.filter((unit) => unit !== widest)].flat()
 }
 
 const newestThenLargest = (list: readonly Work[]): Work[] =>

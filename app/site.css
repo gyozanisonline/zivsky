@@ -165,7 +165,7 @@ a:hover {
   padding-block: 32px 96px;
 }
 
-/* Sorting on the reading side, the scale on the far side. */
+/* How to look and how to order on the reading side, the scale on the far side. */
 .wall-bar {
   display: flex;
   flex-wrap: wrap;
@@ -176,7 +176,9 @@ a:hover {
   color: var(--graphite);
 }
 
-.views {
+.bar-controls,
+.views,
+.layouts {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -184,15 +186,22 @@ a:hover {
   font-size: 13px;
 }
 
+/* Wall or index is a different question from the order, so it sits further away. */
+.bar-controls {
+  column-gap: 40px;
+}
+
 /* 10px above and below gives each option a 40px tall hit area. */
-.view-link {
+.view-link,
+.layout-link {
   padding-block: 10px;
   transition-property: color;
   transition-duration: 150ms;
   transition-timing-function: ease-out;
 }
 
-.view-link:hover {
+.view-link:hover,
+.layout-link:hover {
   color: var(--ink);
 }
 
@@ -202,7 +211,8 @@ a:hover {
   font-size: 11px;
 }
 
-.view-link[aria-current="page"] {
+.view-link[aria-current="page"],
+.layout-link[aria-current="page"] {
   color: var(--ink);
   text-decoration-line: underline;
   text-decoration-color: var(--ink);
@@ -328,6 +338,70 @@ a:hover {
 
 .piece-link:focus-visible {
   outline-offset: 8px;
+}
+
+/* ---------- The index ---------- */
+
+.index-page {
+  padding-block: 32px 96px;
+}
+
+.index {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Title, year, medium, size: one line per work, the way a catalogue lists them. */
+.index-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px minmax(140px, 220px) 120px;
+  align-items: baseline;
+  gap: 4px 24px;
+  padding-block: 12px;
+  border-block-end: 1px solid var(--hairline);
+}
+
+.index-title {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.index-year,
+.index-medium,
+.index-size {
+  font-size: 13px;
+  color: var(--graphite);
+  font-variant-numeric: tabular-nums;
+}
+
+.index-size {
+  text-align: end;
+}
+
+.index-row:hover {
+  text-decoration-line: none;
+}
+
+.index-row:hover .index-title {
+  text-decoration-line: underline;
+  text-decoration-color: var(--olive);
+}
+
+@media (max-width: 640px) {
+  .index-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .index-medium {
+    grid-column: 1;
+  }
+
+  .index-size {
+    grid-column: 2;
+  }
 }
 
 /* ---------- A single work ---------- */

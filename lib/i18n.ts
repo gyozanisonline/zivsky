@@ -1,4 +1,4 @@
-import { isDefaultSort, sortSlug, type Sort } from "@/lib/views"
+import { DEFAULT_LAYOUT, isDefaultSort, sortSlug, type Layout, type Sort } from "@/lib/views"
 import type { Lang } from "@/lib/works"
 
 export const LANGS: readonly Lang[] = ["en", "he"]
@@ -13,8 +13,12 @@ const prefix = (lang: Lang) => (lang === DEFAULT_LANG ? "" : `/${lang}`)
 export const homeHref = (lang: Lang) => prefix(lang) || "/"
 export const workHref = (lang: Lang, slug: string) => `${prefix(lang)}/works/${slug}`
 export const pathFor = (lang: Lang, path: string) => `${prefix(lang)}${path}` || "/"
-export const sortHref = (lang: Lang, sort: Sort) =>
-  isDefaultSort(sort) ? homeHref(lang) : pathFor(lang, `/sort/${sortSlug(sort)}`)
+/** The wall at "/", the index at "/index", each order on its own page underneath. */
+export const pageHref = (lang: Lang, layout: Layout, sort: Sort) => {
+  const base = layout === DEFAULT_LAYOUT ? "" : `/${layout}`
+  if (isDefaultSort(sort)) return pathFor(lang, base)
+  return pathFor(lang, `${base}/sort/${sortSlug(sort)}`)
+}
 
 export const copy = {
   he: {
@@ -34,6 +38,8 @@ export const copy = {
     viewsLabel: "סידור העבודות",
     views: { medium: "טכניקה", year: "שנה", size: "גודל" },
     flipTo: "לחיצה נוספת:",
+    layoutsLabel: "דרך הצפייה",
+    layouts: { wall: "קיר", index: "רשימה" },
     order: {
       medium: ["ציורים תחילה", "עבודות על נייר תחילה"],
       year: ["החדש תחילה", "הישן תחילה"],
@@ -65,6 +71,8 @@ export const copy = {
     viewsLabel: "Arrange the works",
     views: { medium: "Medium", year: "Year", size: "Size" },
     flipTo: "Press again for",
+    layoutsLabel: "How to look",
+    layouts: { wall: "Wall", index: "Index" },
     order: {
       medium: ["paintings first", "works on paper first"],
       year: ["newest first", "oldest first"],
