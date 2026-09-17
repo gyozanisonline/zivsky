@@ -1,4 +1,4 @@
-import { DEFAULT_LAYOUT, isDefaultSort, sortSlug, type Layout, type Sort } from "@/lib/views"
+import { isDefaultSort, LAYOUT_SLUG, sortSlug, type Layout, type Sort } from "@/lib/views"
 import type { Lang } from "@/lib/works"
 
 export const LANGS: readonly Lang[] = ["en", "he"]
@@ -13,9 +13,9 @@ const prefix = (lang: Lang) => (lang === DEFAULT_LANG ? "" : `/${lang}`)
 export const homeHref = (lang: Lang) => prefix(lang) || "/"
 export const workHref = (lang: Lang, slug: string) => `${prefix(lang)}/works/${slug}`
 export const pathFor = (lang: Lang, path: string) => `${prefix(lang)}${path}` || "/"
-/** The wall at "/", the index at "/index", each order on its own page underneath. */
+/** The wall at "/", the index at "/list", each order on its own page underneath. */
 export const pageHref = (lang: Lang, layout: Layout, sort: Sort) => {
-  const base = layout === DEFAULT_LAYOUT ? "" : `/${layout}`
+  const base = LAYOUT_SLUG[layout]
   if (isDefaultSort(sort)) return pathFor(lang, base)
   return pathFor(lang, `${base}/sort/${sortSlug(sort)}`)
 }
