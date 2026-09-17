@@ -1,4 +1,9 @@
-// Ways to arrange the wall. Pressing the option you are already on reverses it.
+// Two ways to look at the works, and three ways to order them.
+// Pressing the order you are already on reverses it.
+export const LAYOUTS = ["wall", "index"] as const
+export type Layout = (typeof LAYOUTS)[number]
+export const DEFAULT_LAYOUT: Layout = "wall"
+
 export const VIEWS = ["medium", "year", "size"] as const
 export type View = (typeof VIEWS)[number]
 
