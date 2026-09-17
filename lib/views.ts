@@ -4,6 +4,9 @@ export const LAYOUTS = ["wall", "index"] as const
 export type Layout = (typeof LAYOUTS)[number]
 export const DEFAULT_LAYOUT: Layout = "wall"
 
+// Never name this segment "index": it collides with Next's own index.html and the build fails.
+export const LAYOUT_SLUG: Record<Layout, string> = { wall: "", index: "/list" }
+
 export const VIEWS = ["medium", "year", "size"] as const
 export type View = (typeof VIEWS)[number]
 
