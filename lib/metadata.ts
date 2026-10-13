@@ -1,54 +1,49 @@
 import type { Metadata } from "next"
-import { copy, DEFAULT_LANG, pathFor } from "@/lib/i18n"
-import { getWork, sizeLabel, works, type Lang } from "@/lib/works"
+import { copy } from "@/lib/i18n"
+import { getWork, sizeLabel, works } from "@/lib/works"
 
-const LOCALE: Record<Lang, string> = { he: "he_IL", en: "en_US" }
-
-function alternates(lang: Lang, path: string): Metadata["alternates"] {
-  return {
-    canonical: pathFor(lang, path),
-    languages: { he: pathFor("he", path), en: pathFor("en", path), "x-default": pathFor(DEFAULT_LANG, path) },
-  }
-}
-
-export function homeMetadata(lang: Lang): Metadata {
-  const t = copy[lang]
+export function homeMetadata(): Metadata {
   const cover = works[0]?.image.share
   return {
-    title: { absolute: `${t.name} · ${t.role}` },
-    description: t.siteDescription,
-    alternates: alternates(lang, ""),
+    title: { absolute: copy.name },
+    description: copy.siteDescription,
+    alternates: { canonical: "/" },
     openGraph: {
-      title: t.name,
-      description: t.siteDescription,
-      siteName: t.name,
-      locale: LOCALE[lang],
+      title: copy.name,
+      description: copy.siteDescription,
+      siteName: copy.name,
+      locale: "en_US",
       type: "website",
       images: cover ? [{ url: cover.src, width: cover.width, height: cover.height }] : [],
     },
   }
 }
 
-export function workMetadata(lang: Lang, slug: string): Metadata {
+export function aboutMetadata(): Metadata {
+  return {
+    title: copy.about,
+    description: `${copy.about} ${copy.name}`,
+    alternates: { canonical: "/about" },
+  }
+}
+
+export function workMetadata(slug: string): Metadata {
   const work = getWork(slug)
   if (!work) return {}
-  const t = copy[lang]
   const size = sizeLabel(work)
-  const description = [work.medium[lang] ?? work.medium.en, size && `${size} ${t.cm}`, work.year]
-    .filter(Boolean)
-    .join(", ")
+  const description = [work.medium.en, size && `${size} ${copy.cm}`, work.year].filter(Boolean).join(", ")
   const { share } = work.image
   return {
-    title: work.title[lang],
+    title: work.title.en,
     description,
-    alternates: alternates(lang, `/works/${slug}`),
+    alternates: { canonical: `/works/${slug}` },
     openGraph: {
-      title: `${work.title[lang]} · ${t.name}`,
+      title: `${work.title.en} · ${copy.name}`,
       description,
-      siteName: t.name,
-      locale: LOCALE[lang],
+      siteName: copy.name,
+      locale: "en_US",
       type: "article",
-      images: [{ url: share.src, width: share.width, height: share.height, alt: work.title[lang] }],
+      images: [{ url: share.src, width: share.width, height: share.height, alt: work.title.en }],
     },
   }
 }

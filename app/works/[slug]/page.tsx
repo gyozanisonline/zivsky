@@ -7,10 +7,10 @@ export const generateStaticParams = workStaticParams
 
 export async function generateMetadata({ params }: SlugParams): Promise<Metadata> {
   const { slug } = await params
-  return workMetadata("he", slug)
+  return workMetadata(slug)
 }
 
 export default async function Page({ params }: SlugParams) {
   const { slug } = await params
-  return <WorkPage lang="he" slug={slug} />
+  return <WorkPage slug={slug} />
 }

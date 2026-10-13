@@ -1,20 +1,35 @@
 import type { Metadata } from "next"
-import { displayFont, textFont } from "@/lib/fonts"
-import { copy, dirOf } from "@/lib/i18n"
+import { displayFont, nameFont, textFont } from "@/lib/fonts"
+import { copy } from "@/lib/i18n"
 import { SITE_URL } from "@/lib/site"
-import type { Lang } from "@/lib/works"
 import "@/app/site.css"
 
-export const shellMetadata = (lang: Lang): Metadata => ({
+export const shellMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: copy[lang].name, template: `%s · ${copy[lang].name}` },
-  description: copy[lang].siteDescription,
-})
+  title: { default: copy.name, template: `%s · ${copy.name}` },
+  description: copy.siteDescription,
+}
 
-// Each language is its own root layout, so <html lang dir> is right from the first byte.
-export function SiteShell({ lang, children }: { lang: Lang; children: React.ReactNode }) {
+// The wall remembers how it was last looked at. Set before first paint, so the
+// chosen mode never flashes the other one. Absent or unreadable means the default:
+// equal size, 64 apart, no names.
+const RESTORE_MODES = `try{var m=JSON.parse(localStorage.getItem("ziv-modes")||"{}"),r=document.documentElement;
+if(m.scale==="true")r.dataset.scale="true";if(m.names==="on")r.dataset.names="on";
+if(typeof m.gap==="number")r.style.setProperty("--wall-gap",m.gap+"px")}catch(e){}`
+
+export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={lang} dir={dirOf(lang)} className={`${displayFont.variable} ${textFont.variable}`}>
+    // The script below dresses <html> before React arrives, so the mode attributes
+    // differ from the server's markup on purpose.
+    <html
+      lang="en"
+      dir="ltr"
+      className={`${nameFont.variable} ${displayFont.variable} ${textFont.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: RESTORE_MODES }} />
+      </head>
       <body>{children}</body>
     </html>
   )
