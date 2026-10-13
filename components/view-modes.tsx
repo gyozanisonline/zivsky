@@ -9,12 +9,12 @@ type Names = "on" | "off"
 interface Modes {
   scale: Scale
   names: Names
-  /** The space between works in equal size, in px. null leaves the wall's own spacing. */
+  /** The space between works, in px. null means the wall's own 64. */
   gap: number | null
 }
 
-const DEFAULT_MODES: Modes = { scale: "true", names: "off", gap: null }
-const DEFAULT_GAP = 48
+const DEFAULT_MODES: Modes = { scale: "even", names: "off", gap: null }
+const DEFAULT_GAP = 64
 const STORE = "ziv-modes"
 
 /** The switches while the hanging is being decided: real scale or equal frames, names or none, how close. */
@@ -27,7 +27,7 @@ export function ViewModes() {
     const root = document.documentElement
     const gap = root.style.getPropertyValue("--wall-gap")
     setModes({
-      scale: root.dataset.scale === "even" ? "even" : "true",
+      scale: root.dataset.scale === "true" ? "true" : "even",
       names: root.dataset.names === "on" ? "on" : "off",
       gap: gap ? Number.parseInt(gap, 10) : null,
     })

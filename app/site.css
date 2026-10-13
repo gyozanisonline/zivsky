@@ -174,14 +174,17 @@ a:hover {
 
 /* The spacing slider is a question only equal size can answer. */
 .gap-control {
-  display: none;
   align-items: center;
   gap: 8px;
   font-size: 13px;
 }
 
-:root[data-scale="even"] .gap-control {
+.gap-control {
   display: flex;
+}
+
+:root[data-scale="true"] .gap-control {
+  display: none;
 }
 
 .gap-control input {
@@ -227,22 +230,28 @@ a:hover {
   margin: 0;
 }
 
-/* The note and the ruler describe the mode the wall is in. */
-.scale-note-even,
-:root[data-scale="even"] .scale-note-true,
-:root[data-scale="even"] .scale-ruler {
-  display: none;
-}
-
-:root[data-scale="even"] .scale-note-even {
-  display: block;
-}
-
+/* The ruler and its note belong to true size; equal size says so in words. */
 .scale-ruler {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 8px;
   font-variant-numeric: tabular-nums;
+}
+
+.scale-note-true {
+  display: none;
+}
+
+:root[data-scale="true"] .scale-ruler {
+  display: inline-flex;
+}
+
+:root[data-scale="true"] .scale-note-true {
+  display: block;
+}
+
+:root[data-scale="true"] .scale-note-even {
+  display: none;
 }
 
 .scale-bar {
@@ -261,22 +270,27 @@ a:hover {
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-evenly;
-  gap: var(--wall-gap, 48px) var(--wall-gap, clamp(24px, 4vw, 64px));
+  gap: var(--wall-gap, 64px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .piece {
-  --img-h: max(48px, calc(var(--h) * var(--cm)));
   inline-size: max(128px, calc(var(--img-h) * var(--ratio)));
   max-inline-size: 100%;
 }
 
-/* Equal size: every work gets the same height, so a small drawing holds the wall
-   as firmly as a large canvas. The true proportion of each one is kept. */
-:root[data-scale="even"] .piece {
+/* Equal size is how the wall hangs (Yoel, 2026-10-13): every work gets the same
+   height, so a small drawing holds the wall as firmly as a large canvas. Each one
+   keeps its true proportion. */
+.piece {
   --img-h: clamp(140px, 24svh, 260px);
+}
+
+/* True size: each work by its real height in centimetres. */
+:root[data-scale="true"] .piece {
+  --img-h: max(48px, calc(var(--h) * var(--cm)));
 }
 
 .piece-link {
