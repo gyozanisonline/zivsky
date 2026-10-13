@@ -13,7 +13,7 @@ export const shellMetadata: Metadata = {
 // The wall remembers how it was last looked at. Set before first paint, so the
 // chosen mode never flashes the other one. Absent or unreadable means the default:
 // equal size, 64 apart, no names.
-const RESTORE_MODES = `try{var m=JSON.parse(localStorage.getItem("ziv-modes")||"{}"),r=document.documentElement;
+const RESTORE_MODES = process.env.NODE_ENV === "production" ? "" : `try{var m=JSON.parse(localStorage.getItem("ziv-modes")||"{}"),r=document.documentElement;
 if(m.scale==="true")r.dataset.scale="true";if(m.names==="on")r.dataset.names="on";
 if(typeof m.gap==="number")r.style.setProperty("--wall-gap",m.gap+"px")}catch(e){}`
 
@@ -28,7 +28,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: RESTORE_MODES }} />
+        {RESTORE_MODES && <script dangerouslySetInnerHTML={{ __html: RESTORE_MODES }} />}
       </head>
       <body>{children}</body>
     </html>
