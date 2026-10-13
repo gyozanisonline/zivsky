@@ -1,9 +1,8 @@
 import type { CSSProperties } from "react"
-import { WallBar } from "@/components/wall-bar"
-import { arrange } from "@/lib/arrange"
+import { ViewModes } from "@/components/view-modes"
 import { copy, workHref } from "@/lib/i18n"
-import type { Layout, Sort } from "@/lib/views"
-import { srcSet, type Lang, type Work } from "@/lib/works"
+import { srcSet, type Work } from "@/lib/works"
+import { works } from "@/lib/works"
 
 // Works without a recorded height hang at a middling size rather than vanishing.
 const FALLBACK_HEIGHT_CM = 60
@@ -12,42 +11,34 @@ const MAX_PX_PER_CM = 4
 const MIN_PIECE_PX = 128
 const EAGER_COUNT = 6
 
-export function Wall({ lang, sort, layout }: { lang: Lang; sort: Sort; layout: Layout }) {
-  const t = copy[lang]
-  const groups = arrange(sort, lang)
-  const eagerIds = new Set(
-    groups
-      .flatMap((group) => group.works)
-      .slice(0, EAGER_COUNT)
-      .map((work) => work.id),
-  )
-
+/** One wall, in the order set in the catalogue. No groups, no sorting. */
+export function Wall() {
   return (
     <main className="wall-page">
-      <h1 className="visually-hidden">{t.works}</h1>
-      <WallBar lang={lang} layout={layout} sort={sort} />
-      {groups.map((group) => {
-        const headingId = `group-${group.key}`
-        return (
-          <section className="wall-group" key={group.key} aria-labelledby={group.heading ? headingId : undefined}>
-            {group.heading && (
-              <h2 className="group-heading" id={headingId}>
-                {group.heading}
-              </h2>
-            )}
-            <ul className="wall">
-              {group.works.map((work) => (
-                <Piece key={work.id} work={work} lang={lang} eager={eagerIds.has(work.id)} />
-              ))}
-            </ul>
-          </section>
-        )
-      })}
+      <h1 className="visually-hidden">{copy.works}</h1>
+
+      <div className="wall-bar">
+        <ViewModes />
+        <div className="scale">
+          <p className="scale-note scale-note-true">{copy.scaleNote}</p>
+          <p className="scale-note scale-note-even">{copy.evenNote}</p>
+          <p className="scale-ruler">
+            <span className="scale-bar" aria-hidden="true" />
+            <span>{copy.scale}</span>
+          </p>
+        </div>
+      </div>
+
+      <ul className="wall">
+        {works.map((work, index) => (
+          <Piece key={work.id} work={work} eager={index < EAGER_COUNT} />
+        ))}
+      </ul>
     </main>
   )
 }
 
-function Piece({ work, lang, eager }: { work: Work; lang: Lang; eager: boolean }) {
+function Piece({ work, eager }: { work: Work; eager: boolean }) {
   const { image } = work
   const [smallest] = image.files
   const heightCm = work.heightCm ?? FALLBACK_HEIGHT_CM
@@ -62,7 +53,7 @@ function Piece({ work, lang, eager }: { work: Work; lang: Lang; eager: boolean }
 
   return (
     <li className="piece" style={hang}>
-      <a className="piece-link" href={workHref(lang, work.slug)}>
+      <a className="piece-link" href={workHref(work.slug)}>
         <img
           className="piece-image"
           src={smallest.src}
@@ -70,13 +61,13 @@ function Piece({ work, lang, eager }: { work: Work; lang: Lang; eager: boolean }
           sizes={`${widestPx}px`}
           width={smallest.width}
           height={smallest.height}
-          alt={work.title[lang]}
+          alt={work.title.en}
           loading={eager ? "eager" : "lazy"}
           decoding="async"
           style={{ viewTransitionName: `work-${work.slug}` } as CSSProperties}
         />
         <span className="piece-label">
-          <span className="piece-title">{work.title[lang]}</span>
+          <span className="piece-title">{work.title.en}</span>
         </span>
       </a>
     </li>

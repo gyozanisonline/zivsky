@@ -1,17 +1,17 @@
-import { Bellefair, IBM_Plex_Sans_Hebrew } from "next/font/google"
+import { Eagle_Lake, IBM_Plex_Sans } from "next/font/google"
 
-// Placeholder pairing until Ziv names the font she liked. Both families carry
-// Hebrew and Latin, so the two languages read as one voice.
-export const displayFont = Bellefair({
+// Eagle Lake carries the headlines only: her name, the work titles, section headings.
+// Everything else (details, labels, running text) is the plain sans.
+export const displayFont = Eagle_Lake({
   weight: "400",
-  subsets: ["hebrew", "latin"],
+  subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 })
 
-export const textFont = IBM_Plex_Sans_Hebrew({
+export const textFont = IBM_Plex_Sans({
   weight: ["400", "500"],
-  subsets: ["hebrew", "latin"],
+  subsets: ["latin"],
   variable: "--font-text",
   display: "swap",
 })

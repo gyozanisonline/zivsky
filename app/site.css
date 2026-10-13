@@ -133,24 +133,13 @@ a:hover {
 }
 
 .wordmark {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.wordmark:hover {
-  text-decoration-line: none;
-}
-
-.wordmark-name {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
   font-size: 28px;
   line-height: 1.1;
 }
 
-.wordmark-role {
-  font-size: 13px;
-  color: var(--graphite);
+.wordmark:hover {
+  text-decoration-line: none;
 }
 
 .site-nav {
@@ -165,7 +154,7 @@ a:hover {
   padding-block: 32px 96px;
 }
 
-/* How to look and how to order on the reading side, the scale on the far side. */
+/* The two switches on the reading side, what a centimetre is on the far side. */
 .wall-bar {
   display: flex;
   flex-wrap: wrap;
@@ -176,46 +165,32 @@ a:hover {
   color: var(--graphite);
 }
 
-.bar-controls,
-.views,
-.layouts {
+.modes {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0 16px;
+  gap: 0 24px;
+}
+
+/* 10px above and below gives each switch a 40px tall hit area. */
+.mode-link {
+  margin: 0;
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
   font-size: 13px;
-}
-
-/* Wall or index is a different question from the order, so it sits further away. */
-.bar-controls {
-  column-gap: 40px;
-}
-
-/* 10px above and below gives each option a 40px tall hit area. */
-.view-link,
-.layout-link {
-  padding-block: 10px;
+  cursor: pointer;
   transition-property: color;
   transition-duration: 150ms;
   transition-timing-function: ease-out;
 }
 
-.view-link:hover,
-.layout-link:hover {
-  color: var(--ink);
-}
-
-/* The arrow says which way the wall is running now. */
-.view-dir {
-  margin-inline-start: 4px;
-  font-size: 11px;
-}
-
-.view-link[aria-current="page"],
-.layout-link[aria-current="page"] {
+.mode-link:hover {
   color: var(--ink);
   text-decoration-line: underline;
-  text-decoration-color: var(--ink);
+  text-decoration-color: var(--olive);
 }
 
 .scale {
@@ -228,6 +203,17 @@ a:hover {
 
 .scale p {
   margin: 0;
+}
+
+/* The note and the ruler describe the mode the wall is in. */
+.scale-note-even,
+:root[data-scale="even"] .scale-note-true,
+:root[data-scale="even"] .scale-ruler {
+  display: none;
+}
+
+:root[data-scale="even"] .scale-note-even {
+  display: block;
 }
 
 .scale-ruler {
@@ -243,29 +229,6 @@ a:hover {
   block-size: 6px;
   border: 1px solid var(--graphite);
   border-block-start: 0;
-}
-
-/* One section per group. Heading to its works (32) sits well inside the gap between groups (96). */
-.wall-group + .wall-group {
-  margin-block-start: 96px;
-}
-
-.group-heading {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0 0 32px;
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-}
-
-.group-heading::after {
-  content: "";
-  flex: 1;
-  border-block-start: 1px solid var(--hairline);
 }
 
 /* Works keep their true relative size, so a row can never fill the width exactly.
@@ -288,6 +251,12 @@ a:hover {
   max-inline-size: 100%;
 }
 
+/* Equal size: every work gets the same height, so a small drawing holds the wall
+   as firmly as a large canvas. The true proportion of each one is kept. */
+:root[data-scale="even"] .piece {
+  --img-h: clamp(140px, 24svh, 260px);
+}
+
 .piece-link {
   display: flex;
   flex-direction: column;
@@ -305,9 +274,10 @@ a:hover {
   outline-offset: -1px;
 }
 
-/* Fixed at two title lines, so a one-line title never lifts its work off the row's line. */
+/* The wall carries no names; the work's own page does. Switching them on fixes the
+   label at two title lines, so a one-line title never lifts its work off the row. */
 .piece-label {
-  display: grid;
+  display: none;
   align-content: start;
   inline-size: 100%;
   block-size: 44px;
@@ -315,11 +285,15 @@ a:hover {
   text-align: start;
 }
 
+:root[data-names="on"] .piece-label {
+  display: grid;
+}
+
 .piece-title {
   display: -webkit-box;
   overflow: hidden;
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.3;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -338,70 +312,6 @@ a:hover {
 
 .piece-link:focus-visible {
   outline-offset: 8px;
-}
-
-/* ---------- The index ---------- */
-
-.index-page {
-  padding-block: 32px 96px;
-}
-
-.index {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Title, year, medium, size: one line per work, the way a catalogue lists them. */
-.index-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 64px minmax(140px, 220px) 120px;
-  align-items: baseline;
-  gap: 4px 24px;
-  padding-block: 12px;
-  border-block-end: 1px solid var(--hairline);
-}
-
-.index-title {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  font-size: 16px;
-  line-height: 1.3;
-  text-wrap: pretty;
-}
-
-.index-year,
-.index-medium,
-.index-size {
-  font-size: 13px;
-  color: var(--graphite);
-  font-variant-numeric: tabular-nums;
-}
-
-.index-size {
-  text-align: end;
-}
-
-.index-row:hover {
-  text-decoration-line: none;
-}
-
-.index-row:hover .index-title {
-  text-decoration-line: underline;
-  text-decoration-color: var(--olive);
-}
-
-@media (max-width: 640px) {
-  .index-row {
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  .index-medium {
-    grid-column: 1;
-  }
-
-  .index-size {
-    grid-column: 2;
-  }
 }
 
 /* ---------- A single work ---------- */
@@ -450,14 +360,9 @@ a:hover {
   inset-inline-end: 0;
 }
 
-/* The chevron points away from the painting, and turns around in Hebrew. */
-.work-arrow-next svg,
-[dir="rtl"] .work-arrow-prev svg {
+/* The chevron points away from the painting. */
+.work-arrow-next svg {
   transform: scaleX(-1);
-}
-
-[dir="rtl"] .work-arrow-next svg {
-  transform: none;
 }
 
 .work-image {
@@ -486,12 +391,6 @@ a:hover {
   text-wrap: balance;
 }
 
-.work-title-alt {
-  margin: 0;
-  font-size: 14px;
-  color: var(--graphite);
-}
-
 .work-details {
   display: grid;
   gap: 4px;
@@ -517,6 +416,94 @@ a:hover {
 
   .work-image {
     max-block-size: 78svh;
+  }
+}
+
+/* ---------- About ---------- */
+
+.about {
+  padding-block: 32px 96px;
+}
+
+.about-heading {
+  margin: 0 0 48px;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.about-body {
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  gap: 48px clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.about-portrait {
+  margin: 0;
+}
+
+.about-portrait img {
+  inline-size: 100%;
+  block-size: auto;
+  outline: 1px solid rgb(0 0 0 / 0.06);
+  outline-offset: -1px;
+}
+
+.about-text {
+  max-inline-size: 62ch;
+}
+
+.about-paragraph {
+  margin: 0 0 16px;
+  text-wrap: pretty;
+}
+
+/* A CV group holds its own rows close (8) and stands well clear of the next group (48). */
+.cv-group {
+  margin-block-start: 48px;
+}
+
+.cv-heading {
+  margin: 0 0 16px;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cv-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 4px 16px;
+  font-size: 14px;
+}
+
+.cv-year {
+  color: var(--graphite);
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-text {
+  text-wrap: pretty;
+}
+
+@media (max-width: 760px) {
+  .about-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-portrait {
+    max-inline-size: 360px;
   }
 }
 

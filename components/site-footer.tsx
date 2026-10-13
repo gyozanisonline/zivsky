@@ -1,28 +1,24 @@
 import { copy } from "@/lib/i18n"
 import { CONTACT } from "@/lib/site"
-import type { Lang } from "@/lib/works"
 
-export function SiteFooter({ lang }: { lang: Lang }) {
-  const t = copy[lang]
+export function SiteFooter() {
   return (
     <footer className="site-footer" id="contact">
-      <h2 className="footer-heading">{t.contact}</h2>
+      <h2 className="footer-heading">{copy.contact}</h2>
       <ul className="contact-list">
         <li>
-          <span className="contact-label">{t.email}</span>
-          <a href={`mailto:${CONTACT.email}`} dir="ltr">
-            {CONTACT.email}
-          </a>
+          <span className="contact-label">{copy.email}</span>
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </li>
         <li>
-          <span className="contact-label">{t.instagram}</span>
-          <a href={CONTACT.instagram.url} dir="ltr" target="_blank" rel="noopener noreferrer">
+          <span className="contact-label">{copy.instagram}</span>
+          <a href={CONTACT.instagram.url} target="_blank" rel="noopener noreferrer">
             @{CONTACT.instagram.handle}
           </a>
         </li>
       </ul>
       <p className="colophon">
-        © {new Date().getFullYear()} {t.name}
+        © {new Date().getFullYear()} {copy.name}
       </p>
     </footer>
   )

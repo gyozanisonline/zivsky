@@ -1,7 +1,8 @@
 # Ziv Balbirsky portfolio
 
-Portfolio site for painter Ziv Balbirsky. Next.js 16 App Router, fully static pages, plain CSS, no CMS.
-English at `/`, Hebrew at `/he` (old `/en` links redirect). Vercel project `zivsky` (GitHub `gyozanisonline/zivsky`).
+Portfolio site for Ziv Balbirsky. Next.js 16 App Router, fully static pages, plain CSS, no CMS.
+English only, at `/` (Hebrew removed 2026-10-13; `/he`, `/en`, `/list` and `/sort/*` all redirect to `/`).
+Vercel project `zivsky` (GitHub `gyozanisonline/zivsky`).
 Rebuilt 2026-09-15 on `feat/rebuild`; the March Sanity site lives on in `main`'s history.
 
 ## How content gets in
@@ -17,12 +18,11 @@ Commit `content/` and `public/works/`. The originals never enter the repo.
 | File | Purpose |
 |---|---|
 | `lib/works.ts` | Typed works list (catalogue + images), size label |
-| `lib/i18n.ts` | Copy in both languages, `DEFAULT_LANG`, link helpers |
-| `app/(he)`, `app/(en)` | One root layout per language (sets `lang`/`dir`) |
-| `components/wall.tsx` | Home: works at true relative scale |
-| `components/index-view.tsx` | The same works as a catalogue register (title, year, medium, size) |
-| `components/wall-bar.tsx` | The bar above both: wall/index, sort switch, scale ruler |
-| `lib/arrange.ts`, `lib/views.ts` | The arrangements (Medium default, Year, Size, each reversible) and prev/next order |
+| `lib/i18n.ts` | All the site's words, link helpers |
+| `app/layout.tsx`, `components/site-shell.tsx` | The one root layout (`lang="en"`, fonts, the mode script) |
+| `components/wall.tsx` | Home: one wall, in the catalogue order |
+| `components/view-modes.tsx` | The two switches: true size / equal size, names on / off |
+| `components/about-view.tsx`, `lib/about.ts`, `content/about.json` | About: her photo, statement, CV. Empty file = no page, no nav link |
 | `components/work-view.tsx` | Single work: viewer with museum label, arrows, close |
 | `app/site.css` | All styles and tokens |
 
@@ -32,16 +32,18 @@ Commit `content/` and `public/works/`. The originals never enter the repo.
 
 ## Design (agreed with Yoel)
 - White wall `#FFFFFF`, ink `#161614`, graphite `#6B6B66`, hairline `#E6E6E1`, olive `#8C8A5E` for hover only.
-- Wall: every work sized by its real height in cm (`--cm` in `site.css`). Three arrangements, each with a reverse, one static page each: Medium at `/` (Paintings, then Works on paper), the rest at `/sort/<view>[-reversed]`. Pressing the option you are on reverses the wall (groups and works both), shown by the arrow next to it. Two layouts: the wall at `/` and the index at `/list`, each order on its own page under `/sort/<slug>`. Inside a year the work with the most surface leads and the rest run tallest first and a series hangs together; the wall never opens on a tiny work. Ordering by height (not area) keeps rows even, since a row is as tall as its tallest work. By year is not the default (Yoel). Rows share their leftover space evenly (`space-evenly`), since true scale can never fill a row and a ragged right edge read as unfinished, works stand on one bottom line, captions left-aligned (start) under each work. Yoel chose true scale over equal frames on 2026-09-15; do not switch to equal-height rows.
-- English opens the site (Yoel's call, 2026-09-15). Flipping it means moving the route folders, not just `DEFAULT_LANG`.
+- The whole site is: her name, Works, About (when there is one), Contact. No role label, no sort, no index, no medium groups, no language switch (all removed 2026-10-13).
+- One wall, in the order held in `content/works.json` `order`. Ziv sets that order herself in the ordering artifact https://claude.ai/artifact/Nf2HwXaYbyUSkHvQFD47RW (drag the works, press Save), then `read_db` collection `order` doc `current` and write the ids into `order`. Hers, saved 2026-10-13, is live.
+- Two switches while the hanging is being decided (`components/view-modes.tsx`): **true size** (each work by its real height in cm, `--cm`) or **equal size** (one height for all), and **names off** (the default) or on. They set `data-scale` / `data-names` on `<html>`, remember themselves in `localStorage`, and an inline script in the shell applies them before first paint, which is why `<html>` carries `suppressHydrationWarning`.
+- The wall carries no names by default: the title, year, medium and size live on the work's own page.
+- Rows share their leftover space evenly (`space-evenly`), works stand on one bottom line.
 - Wall `<img sizes>` is the work's real on-screen width; a vague `sizes` made the wall download the 1600/2400 files.
-- Labels: title, year, medium, height × width cm (height first).
-- Fonts: Bellefair + IBM Plex Sans Hebrew, placeholders until Ziv names the font she liked.
-- Motion: pressing a work sends it from the wall into the viewer (cross-document view transition); the header and footer hold still, everything else fades. Same transition when the sort changes.
+- Fonts: **Eagle Lake for headlines only** (her name, work titles, section headings), IBM Plex Sans for everything else.
+- Motion: pressing a work sends it from the wall into the viewer (cross-document view transition); the header and footer hold still, everything else fades.
 - The work page is a viewer: chevrons flank the painting, a cross in the top corner returns to the wall, and arrow keys / Escape do the same (`components/work-keys.tsx`).
 
-## Waiting on Ziv (emailed 2026-09-15)
-Font, phone on site, order of works, CV and artist statement (then add an About page), 5 missing years, Hebrew wording for "mounted on panel".
+## Waiting on Ziv
+CV and artist statement, and a photo of her, for the About page: fill `content/about.json` (`portrait`, `statement`, `cv`) and the page and its nav link appear by themselves. She answered the rest on 2026-09-17 (five missing years are 2025; she asked for English only).
 
 ## Permissions
 - Free to: read, typecheck, build, run dev, push `feat/*` branches.
@@ -50,5 +52,5 @@ Font, phone on site, order of works, CV and artist statement (then add an About 
 
 ## Gotchas
 - Paths contain spaces: use `fileURLToPath`, never `new URL(...).pathname`.
-- Never name a route segment `index`: it collides with Next's own `index.html` and the Vercel build dies with `ENOENT .next/server/app/index/sort/<x>.html`, even though the local build passes (2026-09-17). The index layout lives at `/list`.
+- Never name a route segment `index`: it collides with Next's own `index.html` and the Vercel build dies with `ENOENT .next/server/app/index/...`, even though the local build passes (2026-09-17).
 - Vercel only ships committed files; generated images must be committed.

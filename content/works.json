@@ -17,7 +17,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 1
+    "order": 11
   },
   {
     "id": "w07",
@@ -37,7 +37,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 2
+    "order": 6
   },
   {
     "id": "w09",
@@ -60,7 +60,7 @@
     },
     "show": true,
     "confirmed": true,
-    "order": 3
+    "order": 10
   },
   {
     "id": "w10",
@@ -83,7 +83,7 @@
     },
     "show": true,
     "confirmed": true,
-    "order": 4
+    "order": 12
   },
   {
     "id": "w11",
@@ -106,7 +106,7 @@
     },
     "show": true,
     "confirmed": true,
-    "order": 5
+    "order": 4
   },
   {
     "id": "w12",
@@ -129,7 +129,7 @@
     },
     "show": true,
     "confirmed": true,
-    "order": 6
+    "order": 14
   },
   {
     "id": "w13",
@@ -152,7 +152,7 @@
     },
     "show": true,
     "confirmed": true,
-    "order": 7
+    "order": 8
   },
   {
     "id": "w14",
@@ -175,7 +175,7 @@
     },
     "show": true,
     "confirmed": true,
-    "order": 8
+    "order": 2
   },
   {
     "id": "w17",
@@ -195,7 +195,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 9
+    "order": 16
   },
   {
     "id": "w26",
@@ -215,7 +215,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 10
+    "order": 9
   },
   {
     "id": "w34",
@@ -235,7 +235,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 11
+    "order": 15
   },
   {
     "id": "w02",
@@ -255,7 +255,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 12
+    "order": 1
   },
   {
     "id": "w03",
@@ -275,7 +275,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 13
+    "order": 18
   },
   {
     "id": "w16",
@@ -295,7 +295,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 14
+    "order": 19
   },
   {
     "id": "w20",
@@ -315,7 +315,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 15
+    "order": 20
   },
   {
     "id": "w25",
@@ -335,7 +335,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 16
+    "order": 25
   },
   {
     "id": "w27",
@@ -355,7 +355,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 17
+    "order": 22
   },
   {
     "id": "w33",
@@ -375,7 +375,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 18
+    "order": 23
   },
   {
     "id": "w01",
@@ -395,7 +395,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 19
+    "order": 21
   },
   {
     "id": "w05",
@@ -415,7 +415,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 20
+    "order": 24
   },
   {
     "id": "w15",
@@ -435,7 +435,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 21
+    "order": 26
   },
   {
     "id": "w18",
@@ -455,7 +455,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 22
+    "order": 27
   },
   {
     "id": "w21",
@@ -475,7 +475,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 23
+    "order": 28
   },
   {
     "id": "w36",
@@ -495,7 +495,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 24
+    "order": 29
   },
   {
     "id": "w22",
@@ -515,7 +515,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 25
+    "order": 30
   },
   {
     "id": "w23",
@@ -535,7 +535,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 26
+    "order": 31
   },
   {
     "id": "w24",
@@ -555,7 +555,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 27
+    "order": 32
   },
   {
     "id": "w31",
@@ -575,7 +575,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 28
+    "order": 33
   },
   {
     "id": "w32",
@@ -595,7 +595,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 29
+    "order": 34
   },
   {
     "id": "w35",
@@ -615,7 +615,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 30
+    "order": 35
   },
   {
     "id": "w06",
@@ -635,7 +635,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 31
+    "order": 13
   },
   {
     "id": "w08",
@@ -655,7 +655,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 32
+    "order": 5
   },
   {
     "id": "w19",
@@ -675,7 +675,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 33
+    "order": 3
   },
   {
     "id": "w28",
@@ -695,7 +695,7 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 34
+    "order": 36
   },
   {
     "id": "w29",
@@ -715,7 +715,7 @@
     "series": null,
     "show": true,
     "confirmed": false,
-    "order": 35
+    "order": 17
   },
   {
     "id": "w30",
@@ -735,6 +735,6 @@
     "series": null,
     "show": true,
     "confirmed": true,
-    "order": 36
+    "order": 7
   }
 ]
