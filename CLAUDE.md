@@ -34,11 +34,11 @@ Commit `content/` and `public/works/`. The originals never enter the repo.
 - White wall `#FFFFFF`, ink `#161614`, graphite `#6B6B66`, hairline `#E6E6E1`, olive `#8C8A5E` for hover only.
 - The whole site is: her name, Works, About (when there is one), Contact. No role label, no sort, no index, no medium groups, no language switch (all removed 2026-10-13).
 - One wall, in the order held in `content/works.json` `order`. Ziv sets that order herself in the ordering artifact https://claude.ai/artifact/Nf2HwXaYbyUSkHvQFD47RW (drag the works, press Save), then `read_db` collection `order` doc `current` and write the ids into `order`. Hers, saved 2026-10-13, is live.
-- Two switches while the hanging is being decided (`components/view-modes.tsx`): **true size** (each work by its real height in cm, `--cm`) or **equal size** (one height for all), and **names off** (the default) or on. They set `data-scale` / `data-names` on `<html>`, remember themselves in `localStorage`, and an inline script in the shell applies them before first paint, which is why `<html>` carries `suppressHydrationWarning`.
+- Two switches while the hanging is being decided (`components/view-modes.tsx`): **true size** (each work by its real height in cm, `--cm`) or **equal size** (one height for all), **names off** (the default) or on, and in equal size a **spacing slider** (0 to 96 px, sets `--wall-gap` on both axes). They set `data-scale` / `data-names` on `<html>`, remember themselves in `localStorage`, and an inline script in the shell applies them before first paint, which is why `<html>` carries `suppressHydrationWarning`.
 - The wall carries no names by default: the title, year, medium and size live on the work's own page.
 - Rows share their leftover space evenly (`space-evenly`), works stand on one bottom line.
 - Wall `<img sizes>` is the work's real on-screen width; a vague `sizes` made the wall download the 1600/2400 files.
-- Fonts: **Eagle Lake for headlines only** (her name, work titles, section headings), IBM Plex Sans for everything else.
+- Fonts: **Eagle Lake for her name only** (`--font-name`), Bellefair for headings and work titles (`--font-display`), IBM Plex Sans for everything else (`--font-text`).
 - Motion: pressing a work sends it from the wall into the viewer (cross-document view transition); the header and footer hold still, everything else fades.
 - The work page is a viewer: chevrons flank the painting, a cross in the top corner returns to the wall, and arrow keys / Escape do the same (`components/work-keys.tsx`).
 

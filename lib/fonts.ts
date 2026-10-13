@@ -1,14 +1,22 @@
-import { Eagle_Lake, IBM_Plex_Sans } from "next/font/google"
+import { Bellefair, Eagle_Lake, IBM_Plex_Sans } from "next/font/google"
 
-// Eagle Lake carries the headlines only: her name, the work titles, section headings.
-// Everything else (details, labels, running text) is the plain sans.
-export const displayFont = Eagle_Lake({
+// Eagle Lake is the signature: her name, nothing else.
+export const nameFont = Eagle_Lake({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-name",
+  display: "swap",
+})
+
+// Headings and work titles.
+export const displayFont = Bellefair({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 })
 
+// Details, labels, running text.
 export const textFont = IBM_Plex_Sans({
   weight: ["400", "500"],
   subsets: ["latin"],

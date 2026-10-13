@@ -18,6 +18,7 @@ export const copy = {
   evenSize: "Equal size",
   namesOn: "Names on",
   namesOff: "Names off",
+  spacing: "Spacing",
   cm: "cm",
   allWorks: "All works",
   previous: "Previous work",

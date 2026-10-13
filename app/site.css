@@ -133,7 +133,7 @@ a:hover {
 }
 
 .wordmark {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-family: var(--font-name), var(--font-display), Georgia, "Times New Roman", serif;
   font-size: 28px;
   line-height: 1.1;
 }
@@ -168,8 +168,30 @@ a:hover {
 .modes {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0 24px;
+}
+
+/* The spacing slider is a question only equal size can answer. */
+.gap-control {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+:root[data-scale="even"] .gap-control {
+  display: flex;
+}
+
+.gap-control input {
+  inline-size: 120px;
+  accent-color: var(--olive);
+}
+
+.gap-value {
+  inline-size: 24px;
+  font-variant-numeric: tabular-nums;
 }
 
 /* 10px above and below gives each switch a 40px tall hit area. */
@@ -239,7 +261,7 @@ a:hover {
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-evenly;
-  gap: 48px clamp(24px, 4vw, 64px);
+  gap: var(--wall-gap, 48px) var(--wall-gap, clamp(24px, 4vw, 64px));
   margin: 0;
   padding: 0;
   list-style: none;
