@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react"
-import { ViewModes } from "@/components/view-modes"
+import { ScaleSwitch, ViewModes } from "@/components/view-modes"
 import { copy, workHref } from "@/lib/i18n"
 import { srcSet, type Work } from "@/lib/works"
 import { works } from "@/lib/works"
@@ -40,6 +40,15 @@ export function Wall() {
           <Piece key={work.id} work={work} eager={index < EAGER_COUNT} />
         ))}
       </ul>
+
+      {/* Down here, after the works, where it reads as an offer and not as a control panel. */}
+      <div className="wall-foot">
+        <ScaleSwitch />
+        <p className="scale-ruler">
+          <span className="scale-bar" aria-hidden="true" />
+          <span>{copy.scale}</span>
+        </p>
+      </div>
     </main>
   )
 }

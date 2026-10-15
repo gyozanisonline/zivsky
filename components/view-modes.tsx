@@ -17,6 +17,34 @@ const DEFAULT_MODES: Modes = { scale: "even", names: "off", gap: null }
 const DEFAULT_GAP = 64
 const STORE = "ziv-modes"
 
+/** The one switch the visitor gets, under the wall: the works at their real size. */
+export function ScaleSwitch() {
+  const [scale, setScale] = useState<Scale>("even")
+
+  useEffect(() => {
+    setScale(document.documentElement.dataset.scale === "true" ? "true" : "even")
+  }, [])
+
+  const flip = () => {
+    const next: Scale = scale === "true" ? "even" : "true"
+    const root = document.documentElement
+    root.dataset.scale = next
+    setScale(next)
+    try {
+      const stored = JSON.parse(localStorage.getItem(STORE) || "{}")
+      localStorage.setItem(STORE, JSON.stringify({ ...stored, scale: next }))
+    } catch {
+      // The switch still works without the memory of it.
+    }
+  }
+
+  return (
+    <button type="button" className="scale-switch" aria-pressed={scale === "true"} onClick={flip}>
+      {scale === "true" ? copy.seeEqualSize : copy.seeTrueSize}
+    </button>
+  )
+}
+
 /** The switches while the hanging is being decided: real scale or equal frames, names or none, how close. */
 export function ViewModes() {
   const [modes, setModes] = useState<Modes>(DEFAULT_MODES)

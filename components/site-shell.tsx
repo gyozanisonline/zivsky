@@ -16,8 +16,12 @@ export const shellMetadata: Metadata = {
 const SWITCHES = process.env.NODE_ENV !== "production"
 
 const RESTORE_MODES = `try{var m=JSON.parse(localStorage.getItem("ziv-modes")||"{}"),r=document.documentElement;
-if(m.scale==="true")r.dataset.scale="true";if(m.names==="on")r.dataset.names="on";
-if(typeof m.gap==="number")r.style.setProperty("--wall-gap",m.gap+"px")}catch(e){}`
+if(m.scale==="true")r.dataset.scale="true";${
+  SWITCHES
+    ? `if(m.names==="on")r.dataset.names="on";
+if(typeof m.gap==="number")r.style.setProperty("--wall-gap",m.gap+"px");`
+    : ""
+}}catch(e){}`
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
@@ -31,7 +35,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       suppressHydrationWarning
     >
       <body>
-        {SWITCHES ? <script dangerouslySetInnerHTML={{ __html: RESTORE_MODES }} /> : null}
+        <script dangerouslySetInnerHTML={{ __html: RESTORE_MODES }} />
         {children}
       </body>
     </html>
