@@ -350,6 +350,37 @@ a:hover {
   outline-offset: 8px;
 }
 
+/* The offer under the wall: 48 below the works, which is half the 96 that
+   separates it from the footer, so it reads as part of the wall. */
+.wall-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-block-start: 48px;
+  color: var(--graphite);
+}
+
+.scale-switch {
+  margin: 0;
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.scale-switch:hover {
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-color: var(--olive);
+}
+
 /* ---------- A single work ---------- */
 
 .work {

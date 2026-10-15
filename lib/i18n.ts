@@ -19,6 +19,8 @@ export const copy = {
   namesOn: "Names on",
   namesOff: "Names off",
   spacing: "Spacing",
+  seeTrueSize: "See them at their real size",
+  seeEqualSize: "See them at the same size",
   cm: "cm",
   allWorks: "All works",
   previous: "Previous work",
