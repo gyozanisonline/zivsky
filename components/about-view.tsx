@@ -1,6 +1,9 @@
 import { about } from "@/lib/about"
 import { copy } from "@/lib/i18n"
 
+// The photo is landscape (her, between two paintings), so it takes the wider column.
+const PORTRAIT_SIZES = "(max-width: 760px) 100vw, 46vw"
+
 /** Her photo, what she writes about the work, and the CV as a gallery prints it. */
 export function AboutView() {
   const { portrait, portraitAlt, statement, cv } = about
@@ -12,13 +15,18 @@ export function AboutView() {
       <div className="about-body">
         {portrait && (
           <figure className="about-portrait">
-            <img
-              src={portrait.src}
-              width={portrait.width}
-              height={portrait.height}
-              alt={portraitAlt ?? copy.name}
-              sizes="(max-width: 900px) 100vw, 360px"
-            />
+            <picture>
+              <source type="image/avif" srcSet={portrait.avif.join(", ")} sizes={PORTRAIT_SIZES} />
+              <img
+                src={portrait.src}
+                srcSet={portrait.jpeg.join(", ")}
+                sizes={PORTRAIT_SIZES}
+                width={portrait.width}
+                height={portrait.height}
+                alt={portraitAlt ?? copy.name}
+                decoding="async"
+              />
+            </picture>
           </figure>
         )}
 
@@ -36,7 +44,11 @@ export function AboutView() {
                 {group.entries.map((entry) => (
                   <li className="cv-entry" key={`${entry.year ?? ""}${entry.text}`}>
                     <span className="cv-year">{entry.year ?? ""}</span>
-                    <span className="cv-text">{entry.text}</span>
+                    <span className="cv-text">
+                      {entry.title && <em className="cv-title">{entry.title}</em>}
+                      {entry.title && ", "}
+                      {entry.text}
+                    </span>
                   </li>
                 ))}
               </ul>

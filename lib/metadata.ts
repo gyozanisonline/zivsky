@@ -1,3 +1,4 @@
+import { about } from "@/lib/about"
 import type { Metadata } from "next"
 import { copy } from "@/lib/i18n"
 import { getWork, sizeLabel, works } from "@/lib/works"
@@ -22,8 +23,14 @@ export function homeMetadata(): Metadata {
 export function aboutMetadata(): Metadata {
   return {
     title: copy.about,
-    description: `${copy.about} ${copy.name}`,
+    // Her own first paragraph says who she is better than any summary of it.
+    description: about.statement[0] ?? `${copy.about} ${copy.name}`,
     alternates: { canonical: "/about" },
+    ...(about.portrait && {
+      openGraph: {
+        images: [{ url: about.portrait.src, width: about.portrait.width, height: about.portrait.height }],
+      },
+    }),
   }
 }
 

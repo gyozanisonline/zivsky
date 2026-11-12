@@ -1,6 +1,47 @@
 {
-  "portrait": null,
-  "portraitAlt": "Ziv Balbirsky",
-  "statement": [],
-  "cv": []
+  "portrait": {
+    "src": "/about/ziv-1600.jpg",
+    "width": 1600,
+    "height": 1067,
+    "avif": ["/about/ziv-800.avif 800w", "/about/ziv-1600.avif 1600w"],
+    "jpeg": ["/about/ziv-800.jpg 800w", "/about/ziv-1600.jpg 1600w"]
+  },
+  "portraitAlt": "Ziv Balbirsky standing between two paintings on a white gallery wall",
+  "statement": [
+    "Ziv Balbirsky (b. 2000, Petah Tikva, Israel) lives and works in Tel Aviv. Balbirsky is a contemporary visual artist focusing primarily on figurative painting. She earned her B.Ed.F.A. with distinction from Hamidrasha Faculty of the Arts, Beit Berl College (2025). Balbirsky has exhibited her work in solo and group shows across Israel, and her pieces are included in private collections.",
+    "Balbirsky's artistic practice captures intimate, temporary, and often unnoticed moments of everyday life. Her painterly approach operates within the space between detailed realistic observation and colorful abstract dissolution. This tension exists not only between different works but at times within a single painting, reflecting the fragility and transience of the moments she records. Her process usually starts with daily photographic documentation, from which she selects images to develop into works created mainly in oil on canvas, alongside drawings in colored pencil and gouache."
+  ],
+  "cv": [
+    {
+      "heading": "Education",
+      "entries": [
+        { "year": "2015-2018", "text": "Alon High School for the Arts, Ramat Hasharon" },
+        { "year": "2021-2025", "text": "B.Ed.F.A. in Art and Art Education, Hamidrasha Faculty of Art, Beit Berl College" }
+      ]
+    },
+    {
+      "heading": "Solo Exhibitions",
+      "entries": [
+        { "year": "2026", "title": "Photo Gallery", "text": "Kfar Saba Municipal Gallery, Kfar Saba" },
+        { "year": "2026", "title": "Unfamiliar Self", "text": "Rosenfeld Gallery, Tel Aviv" }
+      ]
+    },
+    {
+      "heading": "Group Exhibitions",
+      "entries": [
+        { "year": "2025", "title": "subjective", "text": "Studio So" },
+        { "year": "2025", "title": "When Will We Go Home", "text": "HaMekarer Gallery, Tel Aviv" },
+        { "year": "2026", "title": "The Artist Greenhouse", "text": "Freshpaint Art Fair, Tel Aviv" }
+      ]
+    },
+    {
+      "heading": "Awards and Scholarships",
+      "entries": [
+        { "year": "2018", "text": "Excellence Scholarship for the final graduation exhibition at Alon High School, on behalf of Hamidrasha Faculty of Art, Beit Berl College" },
+        { "year": "2024", "text": "Excellence Scholarship in Art Studies, Hamidrasha Faculty of Art, Beit Berl College" },
+        { "year": "2025", "text": "Excellence Scholarship in Art Studies, Hamidrasha Faculty of Art, Beit Berl College" },
+        { "year": "2025", "text": "Solo Exhibition Award on behalf of the Kfar Saba Municipal Gallery (Graduates Exhibition)" }
+      ]
+    }
+  ]
 }

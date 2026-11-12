@@ -42,8 +42,11 @@ Commit `content/` and `public/works/`. The originals never enter the repo.
 - Motion: pressing a work sends it from the wall into the viewer (cross-document view transition); the header and footer hold still, everything else fades.
 - The work page is a viewer: chevrons flank the painting, a cross in the top corner returns to the wall, and arrow keys / Escape do the same (`components/work-keys.tsx`).
 
-## Waiting on Ziv
-CV and artist statement, and a photo of her, for the About page: fill `content/about.json` (`portrait`, `statement`, `cv`) and the page and its nav link appear by themselves. She answered the rest on 2026-09-17 (five missing years are 2025; she asked for English only).
+## About page
+Live since 2026-11-12 from Ziv's email to IAN (17 Oct): her photo (original in `../About from Ziv 2026-10-17/`, web sizes in `public/about/`), two statement paragraphs and the CV, in the order she asked. Text is hers, only spelling made consistent. CV entries take an optional `title` (exhibition name, set in italics).
+
+## Her open wishes (17 Oct, not decided)
+Bigger works with more margin on the wall; the site opening on one painting full screen. She wants to try these herself on Yoel's computer.
 
 ## Permissions
 - Free to: read, typecheck, build, run dev, push `feat/*` branches.
@@ -54,3 +57,4 @@ CV and artist statement, and a photo of her, for the About page: fill `content/a
 - Paths contain spaces: use `fileURLToPath`, never `new URL(...).pathname`.
 - Never name a route segment `index`: it collides with Next's own `index.html` and the Vercel build dies with `ENOENT .next/server/app/index/...`, even though the local build passes (2026-09-17).
 - Vercel only ships committed files; generated images must be committed.
+- `SITE_URL` (`lib/site.ts`) feeds canonical links, the sitemap and share images; it defaults to `https://zivbalbirsky.com` (it said `zivsky.vercel.app` until 2026-11-12).

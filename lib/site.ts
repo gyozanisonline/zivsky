@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://zivsky.vercel.app").replace(/\/$/, "")
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://zivbalbirsky.com").replace(/\/$/, "")
 
 export const CONTACT = {
   email: "ziv.balbirsky@gmail.com",
