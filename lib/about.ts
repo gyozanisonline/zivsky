@@ -2,6 +2,8 @@ import aboutData from "@/content/about.json"
 
 export interface CvEntry {
   year: string | null
+  /** An exhibition title, set in italics before the venue. */
+  title?: string
   text: string
 }
 
@@ -12,7 +14,14 @@ export interface CvGroup {
 
 export interface About {
   /** A committed file under /public, with its real pixel size so nothing shifts on load. */
-  portrait: { src: string; width: number; height: number } | null
+  portrait: {
+    src: string
+    width: number
+    height: number
+    /** "path 800w" candidates, AVIF first, JPEG as the fallback. */
+    avif: string[]
+    jpeg: string[]
+  } | null
   portraitAlt: string | null
   statement: string[]
   cv: CvGroup[]

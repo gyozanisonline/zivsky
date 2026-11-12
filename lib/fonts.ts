@@ -19,6 +19,8 @@ export const displayFont = Bellefair({
 // Details, labels, running text.
 export const textFont = IBM_Plex_Sans({
   weight: ["400", "500"],
+  // Italic for exhibition titles in the CV, so the browser never fakes a slant.
+  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-text",
   display: "swap",
